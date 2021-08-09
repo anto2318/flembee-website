@@ -1,0 +1,22 @@
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    background: 
+        linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 1), rgba(255, 0, 0, 1));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+    padding-bottom: 10px;
+    border-bottom: 0 !important;
+    line-height: 40px;
+}
+
+a:hover,
+a:focus {
+  background-size: 0 0.1em, 100% 0.1em;
+}
