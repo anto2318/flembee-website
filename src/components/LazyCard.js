@@ -10,18 +10,19 @@ import {
 } from 'reactstrap';
 
 const LazyCard = (props) => {
+  console.log(props.background)
   return (
-    <Card>
-      <CardHeader>
-        <img className="card-img" src={require(`./../assets/img/${props.image}`)} alt="alt desc" />
+    <Card style={{width: 350, margin: '0 auto', borderRadius: 12, background: props.background}}>
+      <CardHeader style={{height: 300}}>
+        <img className="card-img" style={{height: 250, paddingTop: 10}} src={require(`./../assets/img/${props.image}`)} alt="alt desc" />
       </CardHeader>
       <CardBody>
-        <Badge className="mb-2" color={props.tag.color}>{props.tag.name}</Badge>
-        <h4 className="card-title">{props.title}</h4>
-        <p className="card-text">{props.description}</p>
+        <Badge className="mb-2" color={props.tag.color} style={{userSelect: 'none'}}>{props.tag.name}</Badge>
+        <h5 className="card-title" style={{userSelect: 'none', textAlign: 'center'}}>{props.title}</h5>
+        <p className="card-text" style={{userSelect: 'none'}}>{props.description}</p>
       </CardBody>
-      <CardFooter>
-        <Button href={props.button.link} color={props.button.color} outline={props.button.outline}>Read More</Button>
+      <CardFooter style={{paddingTop: 25, paddingBottom: 35, textAlign: 'center'}}>
+        <a>Read More</a>
       </CardFooter>
     </Card>
   );
