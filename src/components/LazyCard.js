@@ -13,7 +13,7 @@ const LazyCard = (props) => {
   return (
     <Card style={{width: 350, margin: '0 auto', borderRadius: 12, background: props.background}}>
       <CardHeader style={{height: 300}}>
-        <img className="card-img" style={{height: 250, paddingTop: 10, pointerEvents: 'none'}} src={require(`./../assets/img/${props.image}`)} alt="alt desc" />
+        <img className="card-img" style={{height: 250, paddingTop: 10, pointerEvents: 'none', userSelect: 'none'}} src={require(`./../assets/img/${props.image}`)} alt="alt desc" />
       </CardHeader>
       <CardBody>
         <Badge className="mb-2" color={props.tag.color} style={{userSelect: 'none'}}>{props.tag.name}</Badge>
@@ -21,7 +21,7 @@ const LazyCard = (props) => {
         <p className="card-text" style={{userSelect: 'none', textAlign: 'center'}}>{props.description}</p>
       </CardBody>
       <CardFooter style={{paddingTop: 25, paddingBottom: 35, textAlign: 'center'}}>
-        <a>Read More</a>
+        <a style={{userSelect: 'none'}}>Read More</a>
       </CardFooter>
     </Card>
   );
