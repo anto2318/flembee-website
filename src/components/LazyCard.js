@@ -10,7 +10,6 @@ import {
 } from 'reactstrap';
 
 const LazyCard = (props) => {
-  console.log(props.background)
   return (
     <Card style={{width: 350, margin: '0 auto', borderRadius: 12, background: props.background}}>
       <CardHeader style={{height: 300}}>
@@ -19,7 +18,7 @@ const LazyCard = (props) => {
       <CardBody>
         <Badge className="mb-2" color={props.tag.color} style={{userSelect: 'none'}}>{props.tag.name}</Badge>
         <h5 className="card-title" style={{userSelect: 'none', textAlign: 'center'}}>{props.title}</h5>
-        <p className="card-text" style={{userSelect: 'none'}}>{props.description}</p>
+        <p className="card-text" style={{userSelect: 'none', textAlign: 'center'}}>{props.description}</p>
       </CardBody>
       <CardFooter style={{paddingTop: 25, paddingBottom: 35, textAlign: 'center'}}>
         <a>Read More</a>
