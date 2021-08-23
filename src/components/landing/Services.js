@@ -106,8 +106,8 @@ const Services = () => {
   };
 
   return (
-    <div className="blog-posts bg-light">
-        <div className="text-center">
+    <div className="bg-light" style={{paddingTop: '5rem', paddingBottom: '5rem'}}>
+        <div className="text-center" style={{paddingBottom: '4rem'}}>
             <h2>Our Services</h2>
             <p className="lead">We constantly advance with new technologies. Stay up to date with our services.</p>
         </div>
