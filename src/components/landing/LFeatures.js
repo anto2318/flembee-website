@@ -45,11 +45,11 @@ const LFeatures = () => {
   return (
     <div className="features" style={{padding: 0}}>
     	<Container>
-      <div style={{paddingLeft: 15}}>
+        <div style={{paddingLeft: 15}}>
             <h1 className="text-black">Our Software Development Process</h1>
             <p className="lead">Our 4 Ds philosophy</p>
           </div>
-    		<Row>
+    		<Row style={{margin: '0 auto'}}>
           {features}
     		</Row>
     	</Container>
