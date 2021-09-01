@@ -204,7 +204,7 @@ const Technologies = () => {
 
   let features = fProps.map((feature, index) => {
     return (
-      <Col xs="4" md="2" key={`feature-${index}`}>
+      <Col xs="6" md="2" key={`feature-${index}`}>
         <Tech {...feature} />
       </Col>
     );
