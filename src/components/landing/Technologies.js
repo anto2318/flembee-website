@@ -211,7 +211,7 @@ const Technologies = () => {
   });
 
   return (
-    <div className="features">
+  <div className="bg-light" style={{paddingTop: '5rem', paddingBottom: '5rem'}}>
     	<Container>
             <div style={{textAlign: 'center'}}>
                 <h2>Technologies we work with</h2>

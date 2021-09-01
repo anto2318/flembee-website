@@ -8,6 +8,8 @@ import Services from './../components/landing/Services';
 import LTestimonials from './../components/landing/LTestimonials';
 import LContact from './../components/landing/LContact';
 import About from './../components/landing/About';
+import Portfolio from './../components/landing/Portfolio';
+import Promise from './../components/landing/Promise';
 import Technologies from './../components/landing/Technologies';
 
 class Landing extends React.Component {
@@ -20,6 +22,8 @@ class Landing extends React.Component {
         <About />
         <LFeatures />
         <Services />
+        <Promise />
+        <Portfolio />
         <Technologies />
         {/* <LBlogPosts /> */}
         {/* <LTestimonials /> */}
