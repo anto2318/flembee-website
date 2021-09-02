@@ -36,7 +36,7 @@ const Portfolio = () => {
 
   let cards = cardProps.map((p, index) => {
     return (
-      <Col style={{marginBottom: 20}} xs="6" md="4" key={`key-index-${index}`}>
+      <Col style={{marginBottom: 20}} xs="12" md="4" key={`key-index-${index}`}>
         <PortfolioCard {...p} />
       </Col>
     );
