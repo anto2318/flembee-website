@@ -19,10 +19,10 @@ const Footer = (props) => {
       		</ul>
       	</div>
       	<div className="social mt-4 mt-md-0">
-          <Button outline className="instagram btn-icon" href="https://www.instagram.com/wondersell_commerce/" target="_blank">
+          {/* <Button outline className="instagram btn-icon" href="https://www.instagram.com/wondersell_commerce/" target="_blank">
             <FontAwesomeIcon icon={['fab', 'instagram']} />
             <span className="sr-only">View our Instagram Profile</span>
-          </Button>
+          </Button> */}
           {/* {" "}
           <Button style={{color: '#000'}} outline className="facebook btn-icon" href="https://www.facebook.com/bootstrapbayofficial/" target="_blank">
             <FontAwesomeIcon icon={['fab', 'facebook-square']} /> {" "}
