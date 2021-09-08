@@ -12,7 +12,7 @@ const Portfolio = () => {
       image: "ecommerce.jpg",
       background: '#FFF',
       title: "Wondersell",
-      description: "We create custom web applications and solutions. We help you grow your business using the best technologies.",
+      description: "E-commerce platform that facilitates inventory management, marketing and sales.",
       tag: 'none',
       link: "/"
     },
@@ -20,7 +20,7 @@ const Portfolio = () => {
       image: "food-blog.jpg",
       background:  '#FFF',
       title: "Food Blog",
-      description: "We develop intuitive and attractive applications for Android, iOS and multiplatform for companies and consumers.",
+      description: "Reference food blog for all people who want to have a healthy lifestyle.",
       tag: 'none',
       link: "/"
     },
@@ -28,7 +28,7 @@ const Portfolio = () => {
       image: "solidarity.jpg",
       background:  '#FFF',
       title: "Kua Solidaria",
-      description: "Starting with concept, information architecture, visual identity, and UI / UX design, we deliver dazzling experiences for maximum user engagement.",
+      description: "Organization committed to social causes, providing well-being to those most in need.",
       tag: 'none',
       link: "/"
     },

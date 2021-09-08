@@ -1,15 +1,14 @@
 import React from "react";
 import {
   Container,
-  // Collapse,
+  Collapse,
   Navbar,
-  // NavbarToggler,
-  // Nav,
-  // NavItem,
-  // Button
+  NavbarToggler,
+  Nav,
+  NavItem,
+  Button
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from './../../assets/img/logo_black.svg';
 
 class LNavbar extends React.Component {
@@ -35,22 +34,24 @@ class LNavbar extends React.Component {
               <img className="mr-2" style={{height: 30}} src={logo} alt="logo" />
               Flembee
             </NavLink>
-            {/* <NavbarToggler onClick={this.toggle} />
+            <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-lg-auto" navbar>
-                <NavItem>
-                  <NavLink to="/documentation" className="btn btn-outline-primary">
-                    Documentation
-                  </NavLink>
-                </NavItem>
                 <NavItem className="mx-2">
-                  <Button color="primary" href="https://bootstrapbay.com/theme/lazy-free-react-ui-kit-BD90DEB">
-                    <FontAwesomeIcon icon="download" /> {" "}
-                    Download
+                  <Button style={{
+                        width: 48,
+                        height: 48,
+                        padding: "6px 0px",
+                        borderRadius: 24,
+                        fontSize: 14,
+                        textAlign: "center",
+                        background: "#FFF",
+                        color: "#000"
+                    }}>EN
                   </Button>
                 </NavItem>
               </Nav>
-            </Collapse> */}
+            </Collapse>
           </Container>
         </Navbar>
       );
