@@ -13,15 +13,15 @@ import './fontawesome';
 const App = () => {
 
   const config = {
-    apiKey: "AIzaSyDzER1SmWNZzEoBbpB_2qMeensWghXeqFc",
-    authDomain: "wondersell.firebaseapp.com",
-    projectId: "wondersell",
-    storageBucket: "wondersell.appspot.com",
-    messagingSenderId: "909552100362",
-    appId: "1:909552100362:web:8c261f76bfbcb3ed0c2bf3",
-    measurementId: "G-YY5V6BXH7P"
+    apiKey: "AIzaSyCHC7tUj6CbTJzFVrj09DF5Hf0Bmp7u-3A",
+    authDomain: "flembee-74e5c.firebaseapp.com",
+    projectId: "flembee-74e5c",
+    storageBucket: "flembee-74e5c.appspot.com",
+    messagingSenderId: "744609832513",
+    appId: "1:744609832513:web:e57bf3a29666abe101b0c0",
+    measurementId: "G-WHLE93GD2Y"
   }
-
+  
   return (
     <FirebaseDatabaseProvider firebase={firebase} {...config} >
       <Router>
