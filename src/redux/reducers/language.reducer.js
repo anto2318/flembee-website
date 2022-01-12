@@ -10,7 +10,6 @@ const initialState = {
 };
 
 export const language = (state = initialState, action = {}) => {
-    console.log("HOLA")
     switch (action.type) {
         case LANGUAGE_SUCCESS:
             const { language, catalog } = action.payload;
