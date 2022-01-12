@@ -1,13 +1,13 @@
-import { LANGUAGE_SUCCESS, LANGUAGE_PROCESS } from '../constants';
+import { GET_LANGUAGE, CHANGE_LANGUAGE } from '../constants';
 
-const changeLanguageProcess = data => ({
-  type: LANGUAGE_PROCESS,
-  payload: data,
+const getLanguage = (payload) => ({
+  type: GET_LANGUAGE,
+  payload,
 });
 
-const changeLanguageSucess = data => ({
-  type: LANGUAGE_SUCCESS,
-  payload: data,
+const changeLanguage = (payload) => ({
+  type: CHANGE_LANGUAGE,
+  payload,
 });
 
-export { changeLanguageProcess, changeLanguageSucess };
+export { getLanguage, changeLanguage };

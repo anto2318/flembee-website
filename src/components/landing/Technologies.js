@@ -4,9 +4,16 @@ import {
   Row,
   Col
 } from 'reactstrap';
+import { useSelector } from 'react-redux';
+
 import Tech from './Tech';
 
 const Technologies = () => {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   let fProps = [
     {
       color: "secondary",
@@ -214,8 +221,8 @@ const Technologies = () => {
   <div className="bg-light" style={{paddingTop: '5rem', paddingBottom: '5rem'}}>
     	<Container>
             <div style={{textAlign: 'center'}}>
-                <h2>Technologies we work with</h2>
-                <p className="lead">We work with the best innovative technologies for development.</p>
+                <h2>{ messages.technologiesTitle }</h2>
+                <p className="lead">{ messages.technologiesSubTitle }</p>
                 <br />
             </div>
     		<Row style={{margin: '0 auto', textAlign: 'center'}}>

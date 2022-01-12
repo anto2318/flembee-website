@@ -7,7 +7,13 @@ import {
 } from 'reactstrap';
 import devices from './../../assets/img/satisfaction.svg';
 
+import { useSelector } from 'react-redux';
+
 const Promise = () => {
+
+	const {
+		messages,
+	} = useSelector((state) => state.language);
 
   return (
     <div className="bg-white" style={{paddingTop: '5rem', paddingBottom: '5rem'}}>
@@ -15,15 +21,15 @@ const Promise = () => {
     		<Row>
     			<Col xs="12" md="8">
     				<h1>
-						Guaranteed customer satisfaction
+						{ messages.guaranteeTitle }
 					</h1>
     				<p className="lead my-4">
-						<b>Have an idea? </b>Develop with us and get results on time. We promise to make you feel satisfied.
+						<b>{ messages.guaranteeText1_1 } </b>{ messages.guaranteeText1_2 }
 					</p>
 					<p className="lead my-4">
-						The first <b>5 days</b> are on us with <b>ZERO</b> upfront investment.
+					{ messages.guaranteeText2_1 } <b>{ messages.guaranteeText2_2 }</b> { messages.guaranteeText2_3 } <b>{ messages.guaranteeText2_4 }</b> { messages.guaranteeText2_5 }
 					</p>
-					<Button type="submit" size="lg" className=" mt-0 mt-md-3 mt-lg-0" style={{backgroundColor: '#000', borderRadius: 30, fontSize: 18}}>Contact us</Button>
+					<Button type="submit" size="lg" className=" mt-0 mt-md-3 mt-lg-0" style={{backgroundColor: '#000', borderRadius: 30, fontSize: 18}}>{ messages.contactUs }</Button>
     			</Col>
     			<Col xs="8" md="4">
     				<div className="devices pl-md-4 pt-5 pt-md-0">

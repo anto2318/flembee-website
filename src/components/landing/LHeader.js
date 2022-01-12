@@ -5,25 +5,29 @@ import {
   Col,
   Button
 } from 'reactstrap';
+import { useSelector } from 'react-redux';
+
 import devices from './../../assets/img/launch.svg';
 
 const LHeader = () => {
+
+	const {
+		messages,
+	} = useSelector((state) => state.language);
 
   return (
     <div className="bg-white" style={{paddingBottom: '5rem'}}>
     	<Container>
     		<Row>
     			<Col xs="12" md="6">
-				<p className="lead my-4">Best Web and Mobile Application Development Company</p>
+				<p className="lead my-4">{ messages.header }</p>
     				<h1 className="display-4">
-						Your trusted development partner
+						{ messages.title }
 					</h1>
     				<p className="lead my-4">
-						We provide web and mobile application development services to global companies.
-						Hire the best developers, at affordable prices, based on the needs of your project. 
-						Products adapted to your business, with 100% project delivery success.
+						{ messages.subtitle }
 					</p>
-					<Button type="submit" size="lg" className=" mt-0 mt-md-3 mt-lg-0" style={{backgroundColor: '#000', borderRadius: 30, fontSize: 18}}>About us</Button>
+					<Button type="submit" size="lg" className=" mt-0 mt-md-3 mt-lg-0" style={{backgroundColor: '#000', borderRadius: 30, fontSize: 18}}>{ messages.aboutUs }</Button>
     			</Col>
     			<Col xs="12" md="6">
     				<div className="devices pl-md-4 pt-5 pt-md-0">

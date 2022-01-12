@@ -5,11 +5,16 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Button,
   Badge
 } from 'reactstrap';
+import { useSelector } from 'react-redux';
 
 const LazyCard = (props) => {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   return (
     <Card style={{width: 350, height: 530, margin: '0 auto', borderRadius: 12, background: props.background}}>
       <CardHeader style={{height: 300}}>
@@ -21,7 +26,7 @@ const LazyCard = (props) => {
         <p className="card-text" style={{userSelect: 'none', textAlign: 'center'}}>{props.description}</p>
       </CardBody>
       <CardFooter style={{paddingTop: 25, paddingBottom: 35, textAlign: 'center'}}>
-        <a style={{userSelect: 'none'}}>Read More</a>
+        <a style={{userSelect: 'none'}}>{ messages.readMore }</a>
       </CardFooter>
     </Card>
   );

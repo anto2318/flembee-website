@@ -7,25 +7,38 @@ import {
   Button
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import logo from './../../assets/img/logo_black.svg';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { useDispatch } from 'react-redux';
+import logo from './../../assets/img/logo_black.svg';
+import en from '@locales/en/messages.json';
+import es from '@locales/es/messages.json';
+
 import {
-  changeLanguageProcess,
+  getLanguage,
+  changeLanguage,
 } from '@actions';
 
 const LNavbar = () => {
 
   const dispatch = useDispatch();
 
-  const [userLanguage, setUserLanguage] = useState();
+  const {
+    language,
+  } = useSelector((state) => state.language);
 
   useEffect(() => {
-  localStorage.setItem("userLanguage", userLanguage ? userLanguage : '')
-  }, [userLanguage])
+      let isMounted = true;
+
+      if (isMounted) dispatch(getLanguage());
+
+      return () => {
+          isMounted = false;
+      };
+  }, []);
 
   const onChangeLanguage = async () => {
-    dispatch(changeLanguageProcess())
+    const lng = language === "en" ? {language: "es", messages: es.messages} : {language: "en", messages: en.messages}
+    dispatch(changeLanguage(lng));
   }
 
     return (
@@ -46,7 +59,8 @@ const LNavbar = () => {
                       textAlign: "center",
                       background: "#FFF",
                       color: "#000"
-                  }} onClick={() => onChangeLanguage()}>EN
+                  }} onClick={() => onChangeLanguage()}>
+                    {language.toUpperCase()}
                 </Button>
               </NavItem>
             </Nav>

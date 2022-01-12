@@ -15,7 +15,13 @@ import {
   Button
 } from 'reactstrap';
 
+import { useSelector } from 'react-redux';
+
 const LContact = () => {
+
+	const {
+		messages,
+	} = useSelector((state) => state.language);
 
 	const sendEmail = firebase.functions().httpsCallable('sendEmail');
 	const [name, setName] = useState("");
@@ -38,8 +44,8 @@ const LContact = () => {
   return (
     <div className="contact">
       <div className="cta text-center text-white" style={{backgroundColor: '#000'}}>
-        <h1 className="text-white">Contact us</h1>
-        <p className="lead">Do you have any doubt? We will contact you immediately.</p>
+        <h1 className="text-white">{ messages.contactUs }</h1>
+        <p className="lead">{ messages.anyDoubt }</p>
       </div>
       <div className="bg-light">
         <Container>

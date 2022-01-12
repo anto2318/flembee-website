@@ -5,30 +5,36 @@ import {
   Col
 } from 'reactstrap';
 import PortfolioCard from "../PortfolioCard";
+import { useSelector } from 'react-redux';
 
 const Portfolio = () => {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   let cardProps = [
     {
       image: "ecommerce.jpg",
       background: '#FFF',
-      title: "Wondersell",
-      description: "E-commerce platform that facilitates inventory management, marketing and sales.",
+      title: messages.project1Title,
+      description: messages.project1Text,
       tag: 'none',
       link: "/"
     },
     {
       image: "food-blog.jpg",
       background:  '#FFF',
-      title: "Food Blog",
-      description: "Reference food blog for all people who want to have a healthy lifestyle.",
+      title: messages.project2Title,
+      description: messages.project2Text,
       tag: 'none',
       link: "/"
     },
     {
       image: "solidarity.jpg",
       background:  '#FFF',
-      title: "Kua Solidaria",
-      description: "Organization committed to social causes, providing well-being to those most in need.",
+      title: messages.project3Title,
+      description: messages.project3Text,
       tag: 'none',
       link: "/"
     },
@@ -45,8 +51,8 @@ const Portfolio = () => {
   return (
     <div className="features" style={{paddingTop: 0}}>
         <div className="text-center" style={{paddingBottom: '4rem'}}>
-            <h2>Our Projects</h2>
-            <p className="lead">We continuously improving but never delayed.</p>
+            <h2>{ messages.ourProjectsTitle }</h2>
+            <p className="lead">{ messages.ourProjectsText }</p>
         </div>
         <Container>
           <Row>
