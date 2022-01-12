@@ -78,8 +78,8 @@ const LContact = () => {
 									}
 								}}>
     							    <FormGroup>
-    							      <Label>Name (*)</Label>
-    							      <Input type="text" bsSize="lg" onChange={(e) => setName(e.target.value)} placeholder="Your name ..." />
+    							      <Label>{ messages.name } (*)</Label>
+    							      <Input type="text" bsSize="lg" onChange={(e) => setName(e.target.value)} placeholder={messages.yourName} />
     							    </FormGroup>
     							    <FormGroup>
     							      <Label>
@@ -88,40 +88,40 @@ const LContact = () => {
 											(<span style={{
 												fontWeight: 'bold',
 												color: 'green',
-												}}>Valid email!</span>)
+												}}>{ messages.validEmail }</span>)
 										: 
 											(<span style={{
 												fontWeight: 'bold',
 												color: 'red',
-												}}>Enter a valid name!</span>))
+												}}>{ messages.enterValidEmail }</span>))
 										: <span></span>
 										}
 									  </Label>
-    							      <Input type="email" bsSize="lg" onChange={validateEmail} placeholder="Your email ..." />
+    							      <Input type="email" bsSize="lg" onChange={validateEmail} placeholder={messages.yourEmail} />
     							    </FormGroup>
     							    <FormGroup>
-    							      <Label>Type you message (*)</Label>
+    							      <Label>{ messages.typeMessage } (*)</Label>
     							      <Input type="textarea" onChange={(e) => setMessage(e.target.value)} rows="5"></Input>
     							    </FormGroup>
     							    <div className="text-center mt-5">
-    							   	 <Button type="submit" size="lg" style={{backgroundColor: '#000'}}>Send</Button>
+    							   	 <Button type="submit" size="lg" style={{backgroundColor: '#000'}}>{ messages.send }</Button>
     							    </div>
 									<div style={{textAlign: "center", marginTop: 20}}>
 										{sent !== "" ? (sent === 'empty' ? 
 										<span style={{
 											fontWeight: 'bold',
 											color: 'red',
-											}}>Message not sent. Fill in all the fields!</span>
+											}}>{ messages.messageNotSend }</span>
 										: (sent ? 
 											(<span style={{
 												fontWeight: 'bold',
 												color: 'green',
-												}}>Message sent successfully!</span>)
+												}}>{ messages.messageSentSuccessfully }</span>)
 										: 
 											(<span style={{
 												fontWeight: 'bold',
 												color: 'red',
-												}}>Something went wrong!</span>)))
+												}}>{ messages.somethingWrong }</span>)))
 										: <span></span>
 										}
 									</div>

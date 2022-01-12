@@ -58,5 +58,16 @@
     "project3Text": "Organización comprometida con causas sociales, proporcionando bienestar a los más necesitados.",
     "technologiesTitle": "Tecnologías con las que trabajamos",
     "technologiesSubTitle": "Trabajamos con las mejores tecnologías innovadoras para el desarrollo.",
-    "anyDoubt": "¿Tienes alguna duda? Nos comunicaremos contigo de inmediato."
+    "anyDoubt": "¿Tienes alguna duda? Nos comunicaremos contigo de inmediato.",
+    "name": "Nombre",
+    "validEmail": "¡Correo electrónico válido!",
+    "enterValidEmail": "¡Ingrese un email válido!",
+    "typeMessage": "Escriba su mensaje",
+    "send": "Enviar",
+    "messageNotSend": "Mensaje no enviado. ¡Rellena todos los campos!",
+    "messageSentSuccessfully": "¡Mensaje enviado con éxito!",
+    "somethingWrong": "¡Algo salió mal!",
+    "yourEmail": "Ingresa tu email ...",
+    "yourName": "Ingresa tu nombre ...",
+    "termsCondition": "Términos y Condiciones"
 }

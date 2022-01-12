@@ -5,7 +5,14 @@ import {
 } from "reactstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { useSelector } from 'react-redux';
+
 const Footer = (props) => {
+
+	const {
+		messages,
+	} = useSelector((state) => state.language);
+
   return (
     <footer className="footer-1 bg-light text-dark">
       <Container>
@@ -15,7 +22,7 @@ const Footer = (props) => {
       			{/* <li><a href="https://bootstrapbay.com/" target="_blank" rel="noopener noreferrer">Store</a></li>
       			<li><a href="https://bootstrapbay.com/about" target="_blank" rel="noopener noreferrer">About Us</a></li>
       			<li><a href="https://bootstrapbay.com/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li> */}
-      			<li><a href="https://bootstrapbay.com/terms" target="_blank" rel="noopener noreferrer">Terms & Conditions</a></li>
+      			<li><a href="https://bootstrapbay.com/terms" target="_blank" rel="noopener noreferrer">{ messages.termsCondition }</a></li>
       		</ul>
       	</div>
       	<div className="social mt-4 mt-md-0">
