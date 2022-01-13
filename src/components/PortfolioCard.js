@@ -14,7 +14,7 @@ const PortfolioCard = (props) => {
     <Card style={{width: 350, height: 350, margin: '0 auto', borderRadius: 12, 
     background: props.background, cursor: 'pointer', boxShadow: '0 0 2rem rgb(122 88 204 / 33%)'}}>
       <CardHeader style={{height: 150, textAlign: 'center'}}>
-        <img className="card-img" style={{    height: 'inherit', width: 'auto', paddingTop: 10, pointerEvents: 'none', userSelect: 'none'}} src={require(`./../assets/img/${props.image}`)} alt="alt desc" />
+        <img className="card-img" style={{    height: 'inherit', width: 'auto', paddingTop: 10, pointerEvents: 'none', userSelect: 'none'}} src={props.image} alt="alt desc" />
       </CardHeader>
       <CardBody style={{marginTop: 25}}>
         <Badge className="mb-2" color={props.tag.color} style={{userSelect: 'none'}}>{props.tag.name}</Badge>

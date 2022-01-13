@@ -7,7 +7,7 @@ class Tech extends React.Component {
     return (
       <div className="feature">
         <div className={`big-icon text-${this.props.color}`} style={{marginBottom: 20}}>
-          <img src={require(`../../assets/img/${this.props.icon}`)} />
+          <img src={this.props.icon} />
         </div>
         <h6 className={`text-${this.props.color}`}>{this.props.title}</h6>
         <p className="lead" style={{fontSize: 12}}>{this.props.text}</p>

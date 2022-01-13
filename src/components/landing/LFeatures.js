@@ -8,6 +8,11 @@ import Feature from './Feature';
 
 import { useSelector } from 'react-redux';
 
+import processDiscovery from '@svg/ic-new-process-discover.svg';
+import processDesign from '@svg/ic-new-process-design.svg';
+import processBuild from '@svg/ic-new-process-build.svg';
+import processDeliver from '@svg/ic-new-process-deliver.svg';
+
 const LFeatures = () => {
 
   const {
@@ -17,25 +22,25 @@ const LFeatures = () => {
   let fProps = [
     {
       color: "secondary",
-      icon: "ic-new-process-discover.svg",
+      icon: processDiscovery,
       title: messages.discoverTitle,
       text: messages.discoverText,
     },
     {
       color: "secondary",
-      icon: "ic-new-process-design.svg",
+      icon: processDesign,
       title: messages.designTitle,
       text: messages.designText,
     },
     {
       color: "secondary",
-      icon: "ic-new-process-build.svg",
+      icon: processBuild,
       title: messages.developTitle,
       text: messages.developText,
     },
     {
       color: "secondary",
-      icon: "ic-new-process-deliver.svg",
+      icon: processDeliver,
       title: messages.deliverTitle,
       text: messages.deliverText,
     }

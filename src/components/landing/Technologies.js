@@ -8,6 +8,39 @@ import { useSelector } from 'react-redux';
 
 import Tech from './Tech';
 
+import react from '@svg/reactjs-icon.svg';
+import angular from '@svg/angular-icon.svg';
+import vue from '@svg/vue-icon.svg';
+import typescript from '@svg/types-icon.svg';
+import html from '@svg/html-icon.svg';
+import ios from '@svg/ios-icon.svg';
+import android from '@svg/android-icon.svg';
+import native from '@svg/react-icon.svg';
+import flutter from '@svg/flutter-icon.svg';
+import swift from '@svg/swift-icon.svg';
+import kotlin from '@svg/kotlin-icon.svg';
+import ionic from '@svg/ionic-icon.svg';
+import objective from '@svg/objective-icon.svg'
+import php from '@svg/php-icon.svg';
+import node from '@svg/node-icon.svg';
+import java from '@svg/java-icon.svg';
+import python from '@svg/python-icon.svg';
+import aws from '@svg/aws-icon.svg';
+import gcloud from '@svg/gcloud-icon.svg';
+import gradle from '@svg/gradle-icon.svg';
+import jenkins from '@svg/jenkins-icon.svg';
+import selenium from '@svg/selenium-icon.svg';
+import mongo from '@svg/mongo-icon.svg';
+import mysql from '@svg/mysql-icon.svg';
+import ms from '@svg/ms-icon.svg';
+import firebase from '@svg/firebase-icon.svg';
+import dynamo from '@svg/dynamo-icon.svg';
+import oracle from '@svg/oracle-icon.svg';
+import postgre from '@svg/postgre-icon.svg';
+import redis from '@svg/redis-icon.svg';
+import wordpress from '@svg/wordpress-icon.svg';
+import shopify from '@svg/shopify-icon.svg';
+
 const Technologies = () => {
 
   const {
@@ -17,193 +50,193 @@ const Technologies = () => {
   let fProps = [
     {
       color: "secondary",
-      icon: "reactjs-icon.svg",
+      icon: react,
       title: "React Js",
       text: ''
     },
     {
       color: "secondary",
-      icon: "angular-icon.svg",
+      icon: angular,
       title: "Angular Js",
       text: ''
     },
     {
       color: "secondary",
-      icon: "vue-icon.svg",
+      icon: vue,
       title: "Vue",
       text: ''
     },
     {
         color: "secondary",
-        icon: "types-icon.svg",
+        icon: typescript,
         title: "TypeScript",
         text: ''
     },
     {
       color: "secondary",
-      icon: "html-icon.svg",
+      icon: html,
       title: "HTML5",
       text: ''
     },
     {
     color: "secondary",
-    icon: "ios-icon.svg",
+    icon: ios,
     title: "iOS",
     text: ''
     },
     {
     color: "secondary",
-    icon: "android-icon.svg",
+    icon: android,
     title: "Android",
     text: ''
     },
     {
     color: "secondary",
-    icon: "react-icon.svg",
+    icon: native,
     title: "React Native",
     text: ''
     },
     {
     color: "secondary",
-    icon: "flutter-icon.svg",
+    icon: flutter,
     title: "Flutter",
     text: ''
     },
     {
     color: "secondary",
-    icon: "swift-icon.svg",
+    icon: swift,
     title: "Swift",
     text: ''
     },
     {
     color: "secondary",
-    icon: "kotlin-icon.svg",
+    icon: kotlin,
     title: "Kotlin",
     text: ''
     },
     {
     color: "secondary",
-    icon: "ionic-icon.svg",
+    icon: ionic,
     title: "Ionic",
     text: ''
     },
     {
     color: "secondary",
-    icon: "objective-icon.svg",
+    icon: objective,
     title: "Objective C",
     text: ''
     },
     {
     color: "secondary",
-    icon: "php-icon.svg",
+    icon: php,
     title: "PHP",
     text: ''
     },
     {
     color: "secondary",
-    icon: "node-icon.svg",
+    icon: node,
     title: "Node Js",
     text: ''
     },
     {
     color: "secondary",
-    icon: "java-icon.svg",
+    icon: java,
     title: "Java",
     text: ''
     },
     {
     color: "secondary",
-    icon: "python-icon.svg",
+    icon: python,
     title: "Python",
     text: ''
     },
     {
     color: "secondary",
-    icon: "aws-icon.svg",
+    icon: aws,
     title: "AWS",
     text: ''
     },
     {
     color: "secondary",
-    icon: "gcloud-icon.svg",
+    icon: gcloud,
     title: "Google Cloud",
     text: ''
     },
     {
     color: "secondary",
-    icon: "gradle-icon.svg",
+    icon: gradle,
     title: "Gradle",
     text: ''
     },
     {
     color: "secondary",
-    icon: "jenkins-icon.svg",
+    icon: jenkins,
     title: "Jenkins",
     text: ''
     },
     {
     color: "secondary",
-    icon: "selenium-icon.svg",
+    icon: selenium,
     title: "Selenium",
     text: ''
     },
     {
     color: "secondary",
-    icon: "mongo-icon.svg",
+    icon: mongo,
     title: "Mongo DB",
     text: ''
     },
     {
     color: "secondary",
-    icon: "mysql-icon.svg",
+    icon: mysql,
     title: "MySQL",
     text: ''
     },
     {
     color: "secondary",
-    icon: "ms-icon.svg",
+    icon: ms,
     title: "MsSQL",
     text: ''
     },
     {
     color: "secondary",
-    icon: "firebase-icon.svg",
+    icon: firebase,
     title: "Firebase",
     text: ''
     },
     {
     color: "secondary",
-    icon: "dynamo-icon.svg",
+    icon: dynamo,
     title: "Dynamo DB",
     text: ''
     },
     {
     color: "secondary",
-    icon: "oracle-icon.svg",
+    icon: oracle,
     title: "Oracle",
     text: ''
     },
     {
     color: "secondary",
-    icon: "postgre-icon.svg",
+    icon: postgre,
     title: "PostgreSQL",
     text: ''
     },
     {
     color: "secondary",
-    icon: "redis-icon.svg",
+    icon: redis,
     title: "Redis",
     text: ''
     },
     {
     color: "secondary",
-    icon: "wordpress-icon.svg",
+    icon: wordpress,
     title: "Wordpress",
     text: ''
     },
     {
     color: "secondary",
-    icon: "shopify-icon.svg",
+    icon: shopify,
     title: "Shopify",
     text: ''
     }

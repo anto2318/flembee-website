@@ -4,6 +4,16 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useSelector } from 'react-redux';
 
+import webDevelopment from '@svg/web-development.svg';
+import mobileDevelopment from '@svg/mobile-development.svg';
+import uiUix from '@svg/ui-uix.svg';
+import devops from '@svg/devops.svg';
+import iot from '@svg/iot.svg';
+import gaming from '@svg/gaming.svg';
+import ai from '@svg/ai.svg';
+import qa from '@svg/qa.svg';
+import hire from '@svg/hire.svg';
+
 const Services = () => {
   const {
 		messages,
@@ -11,7 +21,7 @@ const Services = () => {
 
   let cardProps = [
     {
-      image: "web-development.svg",
+      image: webDevelopment,
       background: "linear-gradient(rgb(209, 211, 246) 0%, rgb(209, 211, 246) 100%)",
       title: messages.service1Title,
       description: messages.service1Text,
@@ -19,7 +29,7 @@ const Services = () => {
       link: "/"
     },
     {
-      image: "mobile-development.svg",
+      image: mobileDevelopment,
       background: "linear-gradient(rgb(230, 221, 244) 0%, rgb(230, 221, 244) 100%)",
       title: messages.service2Title,
       description: messages.service2Text,
@@ -27,7 +37,7 @@ const Services = () => {
       link: "/"
     },
     {
-      image: "ui-uix.svg",
+      image: uiUix,
       background: "linear-gradient(rgb(246, 214, 214) 0%, rgb(246, 214, 214) 100%)",
       title: messages.service3Title,
       description: messages.service3Text,
@@ -35,7 +45,7 @@ const Services = () => {
       link: "/"
     },
     {
-        image: "devops.svg",
+        image: devops,
         background: "linear-gradient(rgb(186, 228, 244) 0%, rgb(186, 228, 244) 100%)",
         title: messages.service4Title,
       description: messages.service4Text,
@@ -43,7 +53,7 @@ const Services = () => {
         link: "/"
       },
       {
-        image: "iot.svg",
+        image: iot,
         background: "linear-gradient(rgb(235, 202, 217) 0%, rgb(235, 202, 217) 100%)",
         title: messages.service5Title,
       description: messages.service5Text,
@@ -51,7 +61,7 @@ const Services = () => {
         link: "/"
       },
       {
-        image: "gaming.svg",
+        image: gaming,
         background: "linear-gradient(rgb(196, 228, 238) 0%, rgb(196, 228, 238) 100%)",
         title: messages.service6Title,
         description: messages.service6Text,
@@ -59,7 +69,7 @@ const Services = () => {
         link: "/"
       },
       {
-        image: "ai.svg",
+        image: ai,
         background: "linear-gradient(rgb(201, 232, 219) 0%, rgb(201, 232, 219) 100%)",
         title: messages.service7Title,
         description: messages.service7Text,
@@ -67,7 +77,7 @@ const Services = () => {
         link: "/"
       },
       {
-        image: "qa.svg",
+        image: qa,
         background: "linear-gradient(rgb(244, 220, 204) 0%, rgb(244, 220, 204) 100%)",
         title: messages.service8Title,
         description: messages.service8Text,
@@ -75,7 +85,7 @@ const Services = () => {
         link: "/"
       },
       {
-        image: "hire.svg",
+        image: hire,
         background: "linear-gradient(rgb(195, 216, 246) 0%, rgb(195, 216, 246) 100%)",
         title: messages.service9Title,
         description: messages.service9Text,

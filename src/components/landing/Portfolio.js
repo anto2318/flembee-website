@@ -7,6 +7,10 @@ import {
 import PortfolioCard from "../PortfolioCard";
 import { useSelector } from 'react-redux';
 
+import ecommerce from '@images/ecommerce.jpg';
+import foodBlog from '@images/food-blog.jpg';
+import solidarity from '@images/solidarity.jpg';
+
 const Portfolio = () => {
 
   const {
@@ -15,7 +19,7 @@ const Portfolio = () => {
 
   let cardProps = [
     {
-      image: "ecommerce.jpg",
+      image: ecommerce,
       background: '#FFF',
       title: messages.project1Title,
       description: messages.project1Text,
@@ -23,7 +27,7 @@ const Portfolio = () => {
       link: "/"
     },
     {
-      image: "food-blog.jpg",
+      image: foodBlog,
       background:  '#FFF',
       title: messages.project2Title,
       description: messages.project2Text,
@@ -31,7 +35,7 @@ const Portfolio = () => {
       link: "/"
     },
     {
-      image: "solidarity.jpg",
+      image: solidarity,
       background:  '#FFF',
       title: messages.project3Title,
       description: messages.project3Text,
