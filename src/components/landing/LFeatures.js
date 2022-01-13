@@ -6,31 +6,43 @@ import {
 } from 'reactstrap';
 import Feature from './Feature';
 
+import { useSelector } from 'react-redux';
+
+import processDiscovery from '@svg/ic-new-process-discover.svg';
+import processDesign from '@svg/ic-new-process-design.svg';
+import processBuild from '@svg/ic-new-process-build.svg';
+import processDeliver from '@svg/ic-new-process-deliver.svg';
+
 const LFeatures = () => {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   let fProps = [
     {
       color: "secondary",
-      icon: "ic-new-process-discover.svg",
-      title: "Discover",
-      text: "Customers are our partners. We explore their requirements in depth and apply the strategy to make their project come true."
+      icon: processDiscovery,
+      title: messages.discoverTitle,
+      text: messages.discoverText,
     },
     {
       color: "secondary",
-      icon: "ic-new-process-design.svg",
-      title: "Design",
-      text: "We focus on design. Our goal is to create something unique that is easy for our clients."
+      icon: processDesign,
+      title: messages.designTitle,
+      text: messages.designText,
     },
     {
       color: "secondary",
-      icon: "ic-new-process-build.svg",
-      title: "Develop",
-      text: "We develop with the best technologies. We build with efficiency and skill, creating flexible and scalable, business-oriented solutions."
+      icon: processBuild,
+      title: messages.developTitle,
+      text: messages.developText,
     },
     {
       color: "secondary",
-      icon: "ic-new-process-deliver.svg",
-      title: "Deliver",
-      text: "We use agile methodologies. Our iterative approach allows us to better organize our work and we are always looking to improve what we do."
+      icon: processDeliver,
+      title: messages.deliverTitle,
+      text: messages.deliverText,
     }
   ]
 
@@ -46,8 +58,8 @@ const LFeatures = () => {
     <div className="features" style={{padding: 0}}>
     	<Container>
         <div style={{paddingLeft: 15}}>
-            <h1 className="text-black">Our Software Development Process</h1>
-            <p className="lead">Our 4 Ds philosophy</p>
+            <h1 className="text-black">{ messages.processTitle }</h1>
+            <p className="lead">{ messages.processText }</p>
           </div>
     		<Row style={{margin: '0 auto'}}>
           {features}

@@ -7,7 +7,7 @@ class Feature extends React.Component {
     return (
       <div className="feature">
         <div className={`big-icon text-${this.props.color}`} style={{marginBottom: 20}}>
-          <img src={require(`../../assets/img/${this.props.icon}`)} />
+          <img src={this.props.icon} />
         </div>
         <h5 className={`text-${this.props.color}`}>{this.props.title}</h5>
         <p className="lead">{this.props.text}</p>

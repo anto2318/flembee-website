@@ -2,78 +2,93 @@ import React from 'react';
 import LazyCard from "./../LazyCard";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useSelector } from 'react-redux';
+
+import webDevelopment from '@svg/web-development.svg';
+import mobileDevelopment from '@svg/mobile-development.svg';
+import uiUix from '@svg/ui-uix.svg';
+import devops from '@svg/devops.svg';
+import iot from '@svg/iot.svg';
+import gaming from '@svg/gaming.svg';
+import ai from '@svg/ai.svg';
+import qa from '@svg/qa.svg';
+import hire from '@svg/hire.svg';
 
 const Services = () => {
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   let cardProps = [
     {
-      image: "web-development.svg",
+      image: webDevelopment,
       background: "linear-gradient(rgb(209, 211, 246) 0%, rgb(209, 211, 246) 100%)",
-      title: "Web Development",
-      description: "We create custom web applications and solutions. We help you grow your business using the best technologies.",
+      title: messages.service1Title,
+      description: messages.service1Text,
       tag: 'none',
       link: "/"
     },
     {
-      image: "mobile-development.svg",
+      image: mobileDevelopment,
       background: "linear-gradient(rgb(230, 221, 244) 0%, rgb(230, 221, 244) 100%)",
-      title: "Mobile Apps",
-      description: "We develop intuitive and attractive applications for Android, iOS and multiplatform for companies and consumers.",
+      title: messages.service2Title,
+      description: messages.service2Text,
       tag: 'none',
       link: "/"
     },
     {
-      image: "ui-uix.svg",
+      image: uiUix,
       background: "linear-gradient(rgb(246, 214, 214) 0%, rgb(246, 214, 214) 100%)",
-      title: "UI/UX Design",
-      description: "Starting with concept, information architecture, visual identity, and UI / UX design, we deliver dazzling experiences for maximum user engagement.",
+      title: messages.service3Title,
+      description: messages.service3Text,
       tag: 'none',
       link: "/"
     },
     {
-        image: "devops.svg",
+        image: devops,
         background: "linear-gradient(rgb(186, 228, 244) 0%, rgb(186, 228, 244) 100%)",
-        title: "DevOps",
-        description: "We help you in managing secure and stable infrastructure for Continuous Integration and Continuous Delivery for faster launches.",
+        title: messages.service4Title,
+      description: messages.service4Text,
         tag: 'none',
         link: "/"
       },
       {
-        image: "iot.svg",
+        image: iot,
         background: "linear-gradient(rgb(235, 202, 217) 0%, rgb(235, 202, 217) 100%)",
-        title: "IoT",
-        description: "We develop innovative and customized IoT solutions to simplify and automate complex business processes to save overall operating costs.",
+        title: messages.service5Title,
+      description: messages.service5Text,
         tag: 'none',
         link: "/"
       },
       {
-        image: "gaming.svg",
+        image: gaming,
         background: "linear-gradient(rgb(196, 228, 238) 0%, rgb(196, 228, 238) 100%)",
-        title: "Gaming",
-        description: "We offer interactive, visually engaging and exciting gaming experiences on mobile, console, and virtual reality platforms.",
+        title: messages.service6Title,
+        description: messages.service6Text,
         tag: 'none',
         link: "/"
       },
       {
-        image: "ai.svg",
+        image: ai,
         background: "linear-gradient(rgb(201, 232, 219) 0%, rgb(201, 232, 219) 100%)",
-        title: "AI/ML",
-        description: "We innovate next-generation AI solutions and applications for various industries.",
+        title: messages.service7Title,
+        description: messages.service7Text,
         tag: 'none',
         link: "/"
       },
       {
-        image: "qa.svg",
+        image: qa,
         background: "linear-gradient(rgb(244, 220, 204) 0%, rgb(244, 220, 204) 100%)",
-        title: "QA Services",
-        description: "We guarantee that your software application is successful with manual and automated testing services.",
+        title: messages.service8Title,
+        description: messages.service8Text,
         tag: 'none',
         link: "/"
       },
       {
-        image: "hire.svg",
+        image: hire,
         background: "linear-gradient(rgb(195, 216, 246) 0%, rgb(195, 216, 246) 100%)",
-        title: "Dedicated Developers",
-        description: "Hire your own team of developers for your short, long-term or permanent software project with guaranteed delivery.",
+        title: messages.service9Title,
+        description: messages.service9Text,
         tag: 'none',
         link: "/"
       },
@@ -108,8 +123,8 @@ const Services = () => {
   return (
     <div className="bg-light" style={{paddingTop: '5rem', paddingBottom: '5rem'}}>
         <div className="text-center" style={{paddingBottom: '4rem'}}>
-            <h2>Our Services</h2>
-            <p className="lead">We constantly advance with new technologies. Stay up to date with our services.</p>
+            <h2>{ messages.ourServicesTitle }</h2>
+            <p className="lead">{ messages.ourServicesText }</p>
         </div>
         <Carousel responsive={responsive}>
             {cards}

@@ -1,24 +1,24 @@
-import { LANGUAGE_SUCCESS } from '@constants';
-import es from '@locales/es/messages.json';
-// import { RoutesList, RenderList } from '@routes';
+import { GET_LANGUAGE, CHANGE_LANGUAGE } from '@constants';
+import en from '@locales/en/messages.json';
 
 const initialState = {
-    language: 'es',
-    catalogs: { es },
-    routesList: '',//RoutesList('es'),
-    renderList: '', //RenderList('es'),
+  language: 'en',
+  messages: en.messages,
 };
 
 export const language = (state = initialState, action = {}) => {
     switch (action.type) {
-        case LANGUAGE_SUCCESS:
-            const { language, catalog } = action.payload;
+        case GET_LANGUAGE:
+            return {
+                ...state,
+            };
+
+        case CHANGE_LANGUAGE:
+            const { language, messages } = action.payload;
             return {
                 ...state,
                 language: language,
-                catalogs: { [language]: catalog },
-                routesList: RoutesList(language),
-                renderList: RenderList(language),
+                messages: messages
             };
 
         default:

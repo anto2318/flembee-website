@@ -1,15 +1,16 @@
-import { LANGUAGE_SUCCESS, LANGUAGE_PROCESS } from '@constants';
+import { GET_LANGUAGE, CHANGE_LANGUAGE } from '@constants';
 
-export const languageProcess = ({ dispatch }) => (next) => (action) => {
+export const languageProcess = () => (next) => (action) => {
     next(action);
-    if (action.type === LANGUAGE_PROCESS) {
+    switch (action.type) {
+        case GET_LANGUAGE:
+            // localStorage.getItem('userLanguage');
+        break;
+
+        case CHANGE_LANGUAGE:
+            // localStorage.setItem("userLanguage", action.type.payload ? userLanguage : '')
+        break;
     }
 };
 
-export const updateLanguageSuccess = ({ dispatch }) => (next) => (action) => {
-    next(action);
-    if (action.type === LANGUAGE_SUCCESS) {
-    }
-};
-
-export const languageMdl = [languageProcess, updateLanguageSuccess];
+export const languageMdl = [languageProcess];
