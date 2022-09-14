@@ -1,0 +1,111 @@
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  }
+  
+  .calendar a {
+    color: grey;
+  }
+  
+  .cell {
+    background: transparent;
+    width: 14.2857%;
+    height: 90px;
+    font-size: 0.7em;
+    box-shadow: 0 0px 1px #fff;
+    color: #fff;
+  }
+  
+  .cell .date {
+    margin: 4px;
+  }
+  
+  
+  .current {
+    background: #5142fc;
+  }
+  
+  .current .date {
+    font-weight: bold;
+  }
+  
+  .otherMonth {
+    background: #f7f7f724;
+  }
+  
+  .otherMonth .date {
+    color: #bfbfbf;
+  }
+  
+  
+  .miniEvent {
+    background: #1f86ef;
+    color: white;
+    padding: 3px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .miniEvent.host {
+    background: #3fb73f;
+  }
+  
+  .miniEvent.busy {
+    background: #e7472f;
+  }
+  
+  .calendarNav {
+    width: 100%;
+    padding: 10px 8px 14px 8px;
+    border-bottom: 3px solid #b3b3b3;
+    color: #fff;
+  }
+  
+  .calendarNav div {
+    display: inline-block;
+    width: 33.33%;
+  }
+  
+  .calendarNav .monthAndYear {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  .calendarNav .monthAndYear a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px;
+    background: #27bc27;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    text-shadow: 0 0px 2px #727272;
+  }
+  
+  .calendarNav .back,
+  .calendarNav .forward {
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .calendarNav .back {
+    text-align: left;
+  }
+  
+  .calendarNav .forward {
+    text-align: right;
+  }
+  
+  .dayLabel {
+    font-weight: bold;
+    text-align: center;
+    height: auto;
+    padding: 10px 0;
+    background: transparent;
+    border-bottom: 2px solid #cacaca;
+  }
+
