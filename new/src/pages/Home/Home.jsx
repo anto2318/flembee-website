@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeroSection, Banner, OurServices, Guarantee, OurProjects, SellerSection, StepSection, HireService, Contact } from "../../components";
+import { HeroSection, Banner, OurServices, Guarantee, OurProjects, StepSection, HireService, Contact } from "../../components";
 
 export function Home () {
   
@@ -13,7 +13,6 @@ export function Home () {
       <OurServices />
       <Guarantee />
       <OurProjects />
-      <SellerSection />
       <Contact />
     </>
   );

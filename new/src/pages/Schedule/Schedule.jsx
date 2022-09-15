@@ -27,21 +27,21 @@ export function Schedule () {
 
   return (
     <>
-      <CommonSection title={"Discover your upcoming events"} 
-                    subtitle={"Enjoy your events!"}/>
+      <CommonSection title={"Track your projects"} 
+                    subtitle={"Know the dates of your meetings and deliveries of your projects."}/>
 
       <section>
         <Container>
           <Row className="justify-content-center">
             {user.userSchedule && user.userSchedule.length ?
               <Calendar
-                month={7}
-                year={2022}
+                month={new Date().getMonth()}
+                year={new Date().getFullYear()}
                 preloadedEvents={user.userSchedule}
               />
               : <Calendar
-                month={7}
-                year={2022}
+                month={new Date().getMonth()}
+                year={new Date().getFullYear()}
                 preloadedEvents={[]}
               />
             }

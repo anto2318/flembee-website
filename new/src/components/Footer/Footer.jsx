@@ -78,9 +78,8 @@ export function Footer () {
             <div className="logo">
                 <img src={logo} alt="logo"/>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate, quod repellat! Quis quos dolorum tenetur fuga?
-                Aspernatur rerum quae amet.
+              Develop with us and get results on time. Our commitment is to make the customer feel satisfied. 
+              We accompany you at each stage of the growth of your technological project.
               </p>
             </div>
           </Col>
@@ -123,29 +122,19 @@ export function Footer () {
             <input type="text" className="newsletter" placeholder="Email" />
             <div className="social__links d-flex gap-3 align-items-center ">
               <span>
-                <Link to="#">
-                  <i className="ri-facebook-line"></i>
-                </Link>
-              </span>
-              <span>
-                <Link to="#">
+                <a href="https://instagram.com/flembee.tech" target="blank">
                   <i className="ri-instagram-line"></i>
-                </Link>
+                </a>
               </span>
               <span>
-                <Link to="#">
+                <a href="https://www.linkedin.com/company/flembee" target="blank">
+                  <i className="ri-linkedin-line"></i>
+                </a>
+              </span>
+              <span>
+                <a href="https://twitter.com/flembee_tech" target="blank">
                   <i className="ri-twitter-line"></i>
-                </Link>
-              </span>
-              <span>
-                <Link to="#">
-                  <i className="ri-telegram-line"></i>
-                </Link>
-              </span>
-              <span>
-                <Link to="#">
-                  <i className="ri-discord-line"></i>
-                </Link>
+                </a>
               </span>
             </div>
           </Col>

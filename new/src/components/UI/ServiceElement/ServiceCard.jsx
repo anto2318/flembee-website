@@ -31,10 +31,13 @@ export function ServiceCard ({item}) {
   };
 
   return (
-    <div>
+    <>
       {showModal && <Modal setShowModal={setShowModal} />}
-        <div style={{width: "310px", padding:"20px", height: "600px", background: background, borderRadius: "10px", boxShadow: "0 0 1rem rgba(0,0,0,0.1)"}}>
-          <div style={{width: "270px", height: "260px", textAlign: "center"}}>
+        <div style={{
+            width: "310px", padding:"20px", margin: "0 auto", height: "600px", 
+            background: background, borderRadius: "10px", boxShadow: "0 0 1rem rgba(0,0,0,0.1)"}}>
+          <div style={{width: "270px", height: "260px", textAlign: "center"
+        }}>
             <img src={getImage(image)} alt="" 
                 style={{
                   borderRadius: "10px", width: "auto", height : "auto", maxHeight: "100%", maxWidth: "100%"
@@ -58,6 +61,6 @@ export function ServiceCard ({item}) {
               </button>
             </div>
       </div>
-    </div>
+    </>
   );
 }

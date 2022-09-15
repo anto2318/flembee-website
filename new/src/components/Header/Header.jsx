@@ -22,11 +22,11 @@ const NAV__LINKS = [
     url: "/home",
   },
   {
-    display: "Events",
+    display: "About",
     url: "/events",
   },
   {
-    display: "Spaces",
+    display: "Schedule",
     url: "/spaces",
   },
   {
@@ -107,7 +107,6 @@ export function Header () {
               </ul>
             </div>
 
-            {isAuth || (user && user.id) ?
               <div className="nav__right d-flex align-items-center gap-5" style={{paddingLeft: "2rem"}}>
                   <div className="single__seller-card d-flex align-items-center gap-3">
                     <button className="btn d-flex gap-2 align-items-center"
@@ -117,50 +116,45 @@ export function Header () {
                       </span>
                       <span style={{color:" #000", textDecoration: "none", fontSize: "0.8rem"}}>English</span>
                     </button>
-                    <DropdownComponent
-                      label={
-                          <>
-                          <div style={{width: 50, height: 50}}>
-                              <img style={{verticalAlign: 0}} src={SELLER__DATA[0].sellerImg} alt="" className="w-100" />
-                            </div>
-                          </>
-                      }
-                      options={[
-                          {
-                            label: 'Schedule',
-                            icon: 'ri-calendar-line',
-                            onClick: () => navigate('/schedule')
-                          },
-                          {
-                              label: 'Spaces',
-                              icon: 'ri-home-line',
-                              onClick: () => navigate('/dashboard/spaces')
-                          },
-                          {
-                              label: 'Settings',
-                              icon: 'ri-settings-3-line',
-                              onClick: () => console.log('Settings')
-                          },
-                          {
-                              label: 'Logout',
-                              icon: 'ri-logout-box-line',
-                              onClick: () => console.log('logout')
-                          }
-                      ]}
-                  />
+
+                    {isAuth || (user && user.id) ?
+                      <DropdownComponent
+                        label={
+                            <>
+                            <div style={{width: 50, height: 50}}>
+                                <img style={{verticalAlign: 0}} src={SELLER__DATA[0].sellerImg} alt="" className="w-100" />
+                              </div>
+                            </>
+                        }
+                        options={[
+                            {
+                              label: 'Schedule',
+                              icon: 'ri-calendar-line',
+                              onClick: () => navigate('/schedule')
+                            },
+                            {
+                                label: 'Projects',
+                                icon: 'ri-home-line',
+                                onClick: () => navigate('/dashboard/spaces')
+                            },
+                            {
+                                label: 'Settings',
+                                icon: 'ri-settings-3-line',
+                                onClick: () => console.log('Settings')
+                            },
+                            {
+                                label: 'Logout',
+                                icon: 'ri-logout-box-line',
+                                onClick: () => console.log('logout')
+                            }
+                        ]}
+                      /> 
+                    :
+                      <span className="loginBtn" 
+                        onClick={() => setShowModal(true)}>Login</span>
+                  }
                 </div>
               </div>
-              :
-              <div className="nav__right d-flex align-items-center gap-5 ">
-                <button className="btn d-flex gap-2 align-items-center"
-                        onClick={() => setShowModal(true)}>
-                  <span>
-                    <i className="ri-user-line"></i>
-                  </span>
-                  <span style={{color:" #000", textDecoration: "none", fontSize: "0.8rem"}}>My Account</span>
-                </button>
-              </div>
-            }
           </div>
         </Container>
       </header>

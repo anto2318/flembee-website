@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 
-import { Home, DashboardEvents, DashboardSpaces, Schedule, CreateEvent, CreateSpace, Wallet} from "../pages";
+import { Home, DashboardEvents, DashboardSpaces, Schedule, CreateEvent, CreateSpace} from "../pages";
 
 const Routers = () => {
   return (
@@ -15,7 +15,6 @@ const Routers = () => {
       <Route path="/dashboard/create-event" element={<CreateEvent />} />
       <Route path="/dashboard/create-space" element={<CreateSpace />} />
       <Route path="/schedule" element={<Schedule />} />
-      <Route path="/wallet" element={<Wallet />} />
     </Routes>
   );
 };

@@ -14,8 +14,8 @@
     width: 14.2857%;
     height: 90px;
     font-size: 0.7em;
-    box-shadow: 0 0px 1px #fff;
-    color: #fff;
+    box-shadow: 0 0px 1px #eb6262;
+    color: #000;
   }
   
   .cell .date {
@@ -24,7 +24,7 @@
   
   
   .current {
-    background: #5142fc;
+    background: #eb6262;
   }
   
   .current .date {
@@ -32,11 +32,11 @@
   }
   
   .otherMonth {
-    background: #f7f7f724;
+    background: #eb62623a;
   }
   
   .otherMonth .date {
-    color: #bfbfbf;
+    color: #000;
   }
   
   
@@ -59,8 +59,8 @@
   .calendarNav {
     width: 100%;
     padding: 10px 8px 14px 8px;
-    border-bottom: 3px solid #b3b3b3;
-    color: #fff;
+    border-bottom: 3px solid #eb6262;
+    color: #000;
   }
   
   .calendarNav div {
@@ -89,7 +89,7 @@
   .calendarNav .forward {
     cursor: pointer;
     font-size: 18px;
-    color: #fff;
+    color: #000;
   }
   
   .calendarNav .back {
@@ -106,6 +106,6 @@
     height: auto;
     padding: 10px 0;
     background: transparent;
-    border-bottom: 2px solid #cacaca;
+    border-bottom: 2px solid #eb6262;
   }
 

@@ -15,8 +15,8 @@ const useStyles = {
         position: 'relative'
     },
     dropdownItemsContainer: {
-        background: 'rgb(52, 52, 68)',
-        border: `1px solid`,
+        background: '#fff',
+        border: `1px solid #eb6262`,
         borderRadius: 5,
         minWidth: 170,
         padding: 0,
@@ -32,7 +32,7 @@ const useStyles = {
         lineHeight: 3,
         cursor: 'pointer',
         background: 'transparent',
-        color: 'white',
+        color: '#000',
         border: 'none',
         outline: 'none',
         '&:hover': {
@@ -80,7 +80,7 @@ export function DropdownComponent ({ label, options }) {
                             style={useStyles.dropdownItem}
                             onClick={() => onItemClick(option.onClick)}
                         >
-                            <i className={option.icon}></i> {option.label}
+                            <i className={option.icon} style={{marginRight: 12}}></i> {option.label}
                         </button>
                     ))}
                 </Column>

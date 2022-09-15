@@ -35,6 +35,17 @@
     color: #eb6262;
   }
   
+  .loginBtn {
+    color: #000;
+    text-decoration: none; 
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .loginBtn:hover {
+    color: #eb6262;
+  }
+
   .active {
     color: #eb6262 !important;
   }
