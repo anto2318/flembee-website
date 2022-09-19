@@ -1,2 +1,1 @@
-export * from './DashboardEventCard';
-export * from './SpaceCard';
+export * from './DashboardProjectCard';

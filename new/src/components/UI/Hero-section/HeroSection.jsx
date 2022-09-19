@@ -2,11 +2,18 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
+import { useSelector } from 'react-redux';
+
 import "./styles.css";
 
 import heroImg from "../../../assets/svg/launch.svg";
 
 export function HeroSection () {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   return (
     <section className="hero__section">
       <Container>
@@ -14,15 +21,13 @@ export function HeroSection () {
           <Col lg="6" md="6">
             <div className="hero__content">
               <p>
-                Best Web and Mobile Application Development Company
+                { messages.header }
               </p>
               <h2>
-                Your trusted development partner
+                { messages.title }
               </h2>
               <p>
-                We provide web and mobile application development services to global companies. 
-                Hire the best developers, at affordable prices, based on the needs of your project. 
-                Products adapted to your business, with 100% project delivery success.
+                { messages.subtitle }
               </p>
 
               <div className="hero__btns d-flex align-items-center gap-4">
@@ -32,7 +37,7 @@ export function HeroSection () {
                 </button>
                 <button className=" create__btn d-flex align-items-center gap-2">
                   <i className="ri-information-line"></i>
-                  <Link to="/dashboard/create-event">About us</Link>
+                  <Link to="/dashboard/create-event">{ messages.aboutUs }</Link>
                 </button>
               </div>
             </div>

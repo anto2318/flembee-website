@@ -11,7 +11,7 @@ export function Banner () {
         <div className="slide-track">
           {TECHNOLOGIES.map((item, index) => (
             <div className="slide" key={index}>
-              <img src={item.image} alt={item.name} height="60" width="60" style={{marginTop: 20}}/>
+              <img src={item.image} alt={item.name} height="50" width="50" style={{marginTop: 25}}/>
             </div>
           ))}
         </div>

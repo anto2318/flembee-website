@@ -1,4 +1,4 @@
-const LANGUAGE_PROCESS = '[Language] Process Change Language';
-const LANGUAGE_SUCCESS = '[Language] Success Language Changed';
+const GET_LANGUAGE = '[Language] Get Language';
+const CHANGE_LANGUAGE = '[Language] Change Language';
 
-export { LANGUAGE_SUCCESS, LANGUAGE_PROCESS };
+export { GET_LANGUAGE, CHANGE_LANGUAGE };

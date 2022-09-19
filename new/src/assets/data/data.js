@@ -48,61 +48,61 @@ import ava04 from "../images/ava-04.png";
 import ava05 from "../images/ava-05.png";
 import ava06 from "../images/ava-06.png";
 
-export const SERVICES = [
+export const SERVICES = (language) => [
   {  
     image: "img01",  
-    name: "Web Development", 
+    name: language.service1Title, 
     background: "linear-gradient(rgb(209, 211, 246) 0%, rgb(209, 211, 246) 100%)", 
-    description: "We create custom web applications and solutions. We help you grow your business using the best technologies.",  
+    description: language.service1Text,  
   },
   {  
     image: "img02",  
-    name: "Mobile Apps",
+    name: language.service2Title,
     background: "linear-gradient(rgb(230, 221, 244) 0%, rgb(230, 221, 244) 100%)",  
-    description: "We develop intuitive and attractive applications for Android, iOS and multiplatform for companies and consumers.",  
+    description: language.service2Text,  
   },
   {  
     image: "img03",  
-    name: "UI/UX Design",
+    name: language.service3Title,
     background: "linear-gradient(rgb(246, 214, 214) 0%, rgb(246, 214, 214) 100%)",  
-    description: "Starting with concept, information architecture, visual identity, and UI / UX design, we deliver dazzling experiences for maximum user engagement.",  
+    description: language.service3Text,  
   },
   {  
     image: "img04",  
-    name: "DevOps",  
+    name: language.service4Title,  
     background: "linear-gradient(rgb(186, 228, 244) 0%, rgb(186, 228, 244) 100%)",
-    description: "We help you in managing secure and stable infrastructure for Continuous Integration and Continuous Delivery for faster launches.",  
+    description: language.service4Text,  
   },
   {  
     image: "img05",  
-    name: "QA Services", 
+    name: language.service5Title, 
     background: "linear-gradient(rgb(244, 220, 204) 0%, rgb(244, 220, 204) 100%)", 
-    description: "We guarantee that your software application is successful with manual and automated testing services.",  
+    description: language.service5Text,  
   },
 ];
 
-export const METHODOLOGY = [
+export const METHODOLOGY = (language) => [
   {
-    title: "Discover",
-    desc: "Customers are our partners. We explore their requirements in depth and apply the strategy to make their project come true.",
+    title: language.discoverTitle,
+    desc: language.discoverText,
     icon: "ri-lightbulb-line",
   },
 
   {
-    title: "Design",
-    desc: "We focus on design. Our goal is to create something unique that is easy for our clients.",
+    title: language.designTitle,
+    desc: language.designText,
     icon: "ri-pencil-line",
   },
 
   {
-    title: "Develop",
-    desc: "We develop with the best technologies. We build with efficiency and skill, creating flexible and scalable, business-oriented solutions.",
+    title: language.developTitle,
+    desc: language.developText,
     icon: "ri-computer-line",
   },
 
   {
-    title: "Deliver",
-    desc: "We use agile methodologies. Our iterative approach allows us to better organize our work and we are always looking to improve what we do.",
+    title: language.deliverTitle,
+    desc: language.deliverText,
     icon: "ri-rocket-line",
   },
 ];
@@ -256,12 +256,12 @@ export const PROJECTS = [
   },
   {  
     image: "img04",  
-    name: "DevOps",  
+    name: "Kaboom",  
     description: "Project 4",  
   },
   {  
     image: "img05",  
-    name: "QA Services", 
+    name: "Krypto", 
     description: "Project 5",  
   },
 ];

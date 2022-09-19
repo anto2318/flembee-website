@@ -11,7 +11,7 @@ export function Modal ({event, setViewingEvent}) {
         <span className="close__modal">
           <i className="ri-close-line" onClick={() => setViewingEvent(false)}></i>
         </span>
-          <ServiceCard item={event} isCreate={true} />
+          <ServiceCard item={event} />
       </div>
     </div>
   );

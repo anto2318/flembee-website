@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { events } from './events.reducer';
-// import { language } from './language.reducer';
+import { language } from './language.reducer';
 import { notification } from './notification.reducer';
 import { orders } from './orders.reducer';
 import { spaces } from './spaces.reducer';
@@ -11,7 +11,7 @@ import { user } from './user.reducer';
 
 export const rootReducer = combineReducers({
     events,
-    // language,
+    language,
     notification,
     orders,
     spaces,

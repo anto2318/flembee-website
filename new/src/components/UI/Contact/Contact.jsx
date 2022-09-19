@@ -14,7 +14,7 @@ export function Contact () {
 
   return (
     <>
-      <section style={{background: "rgb(247, 247, 247)"}}>
+      <section>
         <Container>
           <Row>
             <Col lg="6" md="6" className="m-auto text-center">

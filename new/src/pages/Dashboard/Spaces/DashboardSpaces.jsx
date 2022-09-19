@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
-import { CommonSection, SpaceCard } from "../../../components";
+import { CommonSection, DashboardProjectCard } from "../../../components";
 
 import {
   getUserSpacesListProcess,
@@ -63,8 +63,8 @@ export function DashboardSpaces () {
 
   return (
     <>
-      <CommonSection title={"Discover our wonderful spaces"} 
-                    subtitle={"There is a space just for you!"}/>
+      <CommonSection title={"Stay up to date with the progress of your projects"} 
+                    subtitle={"Keep track of what we do for you."}/>
 
       <section>
         <Container>
@@ -76,18 +76,16 @@ export function DashboardSpaces () {
                   </div>
 
                   <div className="filter__right">
-                    <button
-                      className="bid__btn d-flex align-items-center gap-1" style={{background: 'transparent'}}
-                      onClick={() => navigate('/dashboard/create-space')}
-                    >
-                      <i className="ri-ball-pen-line"></i>Create
+                    <button className="create__btn d-flex align-items-center gap-2"
+                            onClick={() => navigate('/dashboard/create-space')}>
+                      <i className="ri-calendar-line"></i>Schedule a call
                     </button>
                   </div>
                 </div>
               </Col>
               {user.userSpaces?.map((item) => (
                 <Col xxl="3" xl="4" lg="4" md="6" sm="7"  xs="8"  className="mb-4" key={item._id}>
-                  <SpaceCard item={item} isCreate={false} />
+                  <DashboardProjectCard item={item} />
                 </Col>
               ))}
           </Row>

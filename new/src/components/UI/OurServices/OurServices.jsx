@@ -5,11 +5,17 @@ import 'react-multi-carousel/lib/styles.css';
 
 import { ServiceCard } from "../ServiceElement";
 
+import { useSelector } from 'react-redux';
+
 import "./styles.css";
 
 import { SERVICES } from "../../../assets/data/data";
 
 export function OurServices () {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
 
   const responsive = {
     superLargeDesktop: {
@@ -35,12 +41,12 @@ export function OurServices () {
       <Container>
         <Col lg="12" className="mb-5">
           <div className="upcoming__events__top" style={{textAlign: 'center'}}>
-            <h3>Our Services</h3>
-            <p>We constantly advance with new technologies. Stay up to date with our services.</p>
+            <h3>{ messages.ourServicesTitle }</h3>
+            <p>{ messages.ourServicesText }</p>
           </div>
         </Col>
         <Carousel responsive={responsive}>
-          {SERVICES.map((item, index) => (
+          {SERVICES(messages).map((item, index) => (
             <ServiceCard item={item} key={index}/>
           ))}
         </Carousel>

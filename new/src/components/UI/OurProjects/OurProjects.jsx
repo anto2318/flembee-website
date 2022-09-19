@@ -22,7 +22,7 @@ export function OurProjects () {
 
           {PROJECTS.map((item, index) => (
             <Col xxl="3" xl="4" lg="4" md="6" sm="7"  xs="8"  className="mb-4" key={index}>
-              <ProjectCard item={item} isCreate={false} />
+              <ProjectCard item={item} />
             </Col>
           ))}
         </Row>

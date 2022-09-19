@@ -145,7 +145,7 @@ export function CreateEvent () {
           </Col>
           <Col xxl="3" xl="4" lg="4" md="5" sm="7" xs="8"  className="mb-4">
               <h5 className="mb-4 text-light">Preview del evento</h5>
-              { previewState.space && ( <ServiceCard item={previewState} isCreate={true}/>)}
+              { previewState.space && ( <ServiceCard item={previewState} />)}
             </Col>
 
             <Col xxl="9" xl="8" lg="8" md="12" sm="12" xs="12"  className="mb-4">

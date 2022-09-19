@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-import "./style.scss";
-
 import { Modal } from "../Modal";
 
 import img01 from "../../../assets/images/img-01.jpeg";
@@ -33,7 +31,7 @@ import ava04 from "../../../assets/images/ava-04.png";
 import ava05 from "../../../assets/images/ava-05.png";
 import ava06 from "../../../assets/images/ava-06.png";
 
-export function SpaceCard ({item, isCreate}) {
+export function DashboardProjectCard ({item}) {
   let navigate = useNavigate();
 
   const { _id, name, location, spaceImage, avatarImage, price } = item;
@@ -98,7 +96,10 @@ export function SpaceCard ({item, isCreate}) {
   return (
     <div>
       {showModal && <Modal setShowModal={setShowModal} />}
-      <div className="d-flex flex-column" style={{background: "#343444", borderRadius: "10px", width: 310}}>
+      <div className="d-flex flex-column" 
+          style={{
+            border: "1px solid #eb6262", background: "#fff", borderRadius: "10px", width: 310
+      }}>
         <div className="p-3" style={{alignSelf: 'center'}}>
           <img src={getImage(spaceImage)} alt="" 
                   style={{
@@ -107,10 +108,7 @@ export function SpaceCard ({item, isCreate}) {
         </div>
         <div className="px-4" >
           <h5 className="element__title">
-            <Link to={`/spaces/${_id}`}>{name}</Link>
-            {/* { isCreate ? {name}
-              : <Link to={`/spaces/${_id}`}>{name}</Link>
-            } */}
+            {name}
           </h5>
         </div>
         <div className="p-3 d-flex flex-row">
@@ -119,14 +117,14 @@ export function SpaceCard ({item, isCreate}) {
           </div>
           <div className="px-4 d-flex flex-column">
             <div>
-              <h6 style={{color: 'white', fontSize: '0.6rem'}}>Location</h6>
+              <h6 style={{color: 'black', fontSize: '0.6rem'}}>Location</h6>
             </div>
             <div>
               <p>{location}</p>
             </div>
           </div>
           <div className="d-flex flex-column">
-            <h6 style={{color: 'white', fontSize: '0.6rem'}}>Price</h6>
+            <h6 style={{color: 'black', fontSize: '0.6rem'}}>Price</h6>
             <p>{price} $</p>
           </div>
         </div>
@@ -135,7 +133,7 @@ export function SpaceCard ({item, isCreate}) {
             className="bid__btn d-flex align-items-center gap-1"
             onClick={() => navigate(`/spaces/${_id}`)}
           >
-            <i className="ri-shopping-bag-line"></i> Reservar
+            <i className="ri-eye-line"></i> Visualizar
           </button>
         </div>
       </div>

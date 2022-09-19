@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { getStorage } from '../../../helpers';
 
-import { CommonSection, SpaceCard } from "../../../components";
+import { CommonSection, DashboardProjectCard } from "../../../components";
 
 import {
   getSpacesListProcess,
@@ -117,7 +117,7 @@ export function CreateSpace () {
           </Col>
           <Col xxl="3" xl="4" lg="4" md="5" sm="7" xs="8"  className="mb-4">
               <h5 className="mb-4 text-light">Preview del espacio</h5>
-              { previewState.space && ( <SpaceCard item={previewState} isCreate={true} />)}
+              { previewState.space && ( <DashboardProjectCard item={previewState} />)}
             </Col>
 
             <Col xxl="9" xl="8" lg="8" md="12" sm="12" xs="12"  className="mb-4">
