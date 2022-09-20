@@ -1,6 +1,6 @@
 {
-  "short_name": "Flembee",
-  "name": "Sitio Web de Comercio Electrónico",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

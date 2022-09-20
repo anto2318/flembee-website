@@ -1,4 +1,4 @@
-import { GET_LANGUAGE, CHANGE_LANGUAGE } from '@constants';
+import { GET_LANGUAGE, CHANGE_LANGUAGE } from '../constants';
 
 export const languageProcess = () => (next) => (action) => {
     next(action);

@@ -1,9 +1,9 @@
-import { GET_LANGUAGE, CHANGE_LANGUAGE } from '@constants';
-import en from '@locales/en/messages.json';
+import { GET_LANGUAGE, CHANGE_LANGUAGE } from '../constants';
+import en from '../../locales/en/messages.json';
 
 const initialState = {
-  language: 'en',
-  messages: en.messages,
+  language: 'English',
+  messages: en,
 };
 
 export const language = (state = initialState, action = {}) => {
