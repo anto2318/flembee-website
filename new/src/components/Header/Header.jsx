@@ -25,30 +25,12 @@ import {DropdownComponent} from '../Dropdown';
 
 import { SELLER__DATA } from "../../assets/data/data";
 
-const NAV__LINKS = [
-  {
-    display: "Home",
-    url: "/home",
-  },
-  {
-    display: "About",
-    url: "/events",
-  },
-  {
-    display: "Schedule",
-    url: "/spaces",
-  },
-  {
-    display: "Contact",
-    url: "/contact",
-  },
-];
-
 export function Header () {
   const dispatch = useDispatch();
 
   const {
     language,
+    messages
   } = useSelector((state) => state.language);
 
   const headerRef = useRef(null);
@@ -62,6 +44,25 @@ export function Header () {
   const user = getStorage.user();
 
   const isAuth = useSelector((state) => state.user.isAuthenticated);
+
+  const NAV__LINKS = [
+    {
+      display: "Home",
+      url: "/home",
+    },
+    {
+      display: messages.aboutUs,
+      url: "/events",
+    },
+    {
+      display: messages.schedule,
+      url: "/spaces",
+    },
+    {
+      display: messages.contactUs,
+      url: "/contact",
+    },
+  ];
 
   useEffect(() => {
     let isMounted = true;
@@ -158,22 +159,22 @@ export function Header () {
                         }
                         options={[
                             {
-                              label: 'Schedule',
+                              label: messages.schedule,
                               icon: 'ri-calendar-line',
                               onClick: () => navigate('/schedule')
                             },
                             {
-                                label: 'Projects',
+                                label: messages.projects,
                                 icon: 'ri-home-line',
                                 onClick: () => navigate('/dashboard/spaces')
                             },
                             {
-                                label: 'Settings',
+                                label: messages.settings,
                                 icon: 'ri-settings-3-line',
                                 onClick: () => console.log('Settings')
                             },
                             {
-                                label: 'Logout',
+                                label: messages.logout,
                                 icon: 'ri-logout-box-line',
                                 onClick: () => console.log('logout')
                             }

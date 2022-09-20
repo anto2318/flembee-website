@@ -47,7 +47,7 @@ export function OurServices () {
         </Col>
         <Carousel responsive={responsive}>
           {SERVICES(messages).map((item, index) => (
-            <ServiceCard item={item} key={index}/>
+            <ServiceCard item={item} messages={messages} key={index}/>
           ))}
         </Carousel>
       </Container>

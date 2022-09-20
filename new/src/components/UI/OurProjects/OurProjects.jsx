@@ -3,11 +3,17 @@ import { Container, Row, Col } from "reactstrap";
 
 import { ProjectCard } from "../ProjectElement";
 
+import { useSelector } from 'react-redux';
+
 import "./styles.css";
 
 import { PROJECTS } from "../../../assets/data/data";
 
 export function OurProjects () {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
 
   return (
     <section style={{backgroundColor: "#F7F7F7"}}>
@@ -15,8 +21,8 @@ export function OurProjects () {
         <Row>
           <Col lg="12" className="mb-5">
             <div className="upcoming__events__top" style={{textAlign: 'center'}}>
-              <h3>Our Projects</h3>
-              <p>We continuously improving but never delayed.</p>
+              <h3>{ messages.ourProjectsTitle }</h3>
+              <p>{ messages.ourProjectsText }</p>
             </div>
           </Col>
 

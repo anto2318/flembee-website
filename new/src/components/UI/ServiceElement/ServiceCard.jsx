@@ -8,7 +8,7 @@ import img03 from "../../../assets/svg/ui-uix.svg";
 import img04 from "../../../assets/svg/devops.svg";
 import img05 from "../../../assets/svg/qa.svg";
 
-export function ServiceCard ({item}) {
+export function ServiceCard ({item, messages}) {
   const { name, description, image, background } = item;
 
   const [showModal, setShowModal] = useState(false);
@@ -49,7 +49,7 @@ export function ServiceCard ({item}) {
               {name}
             </h5>
             <div className="creator__info-wrapper d-flex gap-3">
-              <p style={{color: "black", textAlign: "center"}}>{description}</p>
+              <p style={{color: "black", textAlign: "center", lineHeight: "30px"}}>{description}</p>
             </div>
           </div>
           <div className="mt-3 d-flex align-items-center justify-content-center">
@@ -57,7 +57,7 @@ export function ServiceCard ({item}) {
                 className="bid__btn d-flex align-items-center gap-1"
                 onClick={() => setShowModal(true)}
               >
-                <i className="ri-information-line"></i> Read More
+                <i className="ri-information-line"></i> { messages.readMore }
               </button>
             </div>
       </div>

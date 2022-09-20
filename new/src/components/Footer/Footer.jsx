@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
 
+import { useSelector } from 'react-redux';
 
 const MY__ACCOUNT = [
   {
@@ -70,6 +71,11 @@ const COMPANY = [
 ];
 
 export function Footer () {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   return (
     <footer className="footer">
       <Container>
@@ -78,8 +84,7 @@ export function Footer () {
             <div className="logo">
                 <img src={logo} alt="logo"/>
               <p>
-              Develop with us and get results on time. Our commitment is to make the customer feel satisfied. 
-              We accompany you at each stage of the growth of your technological project.
+                { messages.footerDesc }
               </p>
             </div>
           </Col>

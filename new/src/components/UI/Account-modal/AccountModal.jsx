@@ -3,9 +3,16 @@ import { useDispatch } from 'react-redux';
 
 import { loginUser, registerUser } from '../../../redux/actions';
 
-import "./modal.css";
+import { useSelector } from 'react-redux';
+
+import "./styles.css";
 
 export function AccountModal ({setShowModal}) {
+
+  const {
+		messages,
+	} = useSelector((state) => state.language);
+
   const dispatch = useDispatch();
 
   const [signInForm, setSignInForm] = useState({
@@ -72,22 +79,22 @@ export function AccountModal ({setShowModal}) {
       } 
   };
 
-  const LoginCompnent = () =>(
+  const LoginComponent = () =>(
     <div className="modal__wrapper">
       <div className="single__modal">
         <span className="close__modal">
           <i className="ri-close-line" onClick={() => setShowModal(false)}></i>
         </span>
-        <h3 className="text-center text-light">Sign in</h3>
-        <p className="text-center text-light">
-          Sign in to your account or create a new one.
+        <h3 className="text-center text-dark">{ messages.signIn }</h3>
+        <p className="text-center text-dark">
+          { messages.messageSignIn }
         </p>
         <div className="input__item mb-4">
-          <h6>Enter a valid email</h6>
+          <h6>{ messages.enterEmail }</h6>
           <input 
             type="email"
             name="email"
-            placeholder="Email..."
+            placeholder={ messages.yourEmail }
             onClick={() =>{
               if(isSignInEmpty)
                 setIsSignInEmpty(false);
@@ -96,7 +103,7 @@ export function AccountModal ({setShowModal}) {
         </div>
 
         <div className="input__item mb-3">
-          <h6>Enter your password</h6>
+          <h6>{ messages.enterPassword }</h6>
           <input 
             type="password"
             name="password"
@@ -104,19 +111,19 @@ export function AccountModal ({setShowModal}) {
               if(isSignInEmpty)
                 setIsSignInEmpty(false);
             }}
-            placeholder="Password..."
+            placeholder={ messages.yourPassword }
             onChange={handleSignInChange} />
         </div>
 
         <div className=" d-flex align-items-center justify-content-between">
           <p></p>
-          <p>Forgot password</p>
+          <p>{ messages.forgotPassword }</p>
         </div>
 
         <button 
           className="place__bid-btn mb-4"
           onClick={() => onSignIn()}
-        >Sign in</button>
+        >{ messages.signIn }</button>
           {isSignInEmpty && 
             <p className='m-0 text-center' style={{color: 'red'}}>Fields cannot be blank</p>
           }
@@ -124,25 +131,25 @@ export function AccountModal ({setShowModal}) {
           className=" d-flex align-items-center justify-content-center"
           onClick={()=> setShowSignUp(true)}
         >
-          <p>Don't have an account? Get started</p>
+          <p>{ messages.haveAccount }</p>
         </div>
       </div>
     </div>
   )
 
-  const RegisterCompnent = () =>(
+  const RegisterComponent = () =>(
     <div className="modal__wrapper">
       <div className="single__modal">
         <span className="close__modal">
           <i className="ri-close-line" onClick={() => setShowModal(false)}></i>
         </span>
-        <h3 className="text-center text-light">Sign up</h3>
-        <p className="text-center text-light">
-          Create a new account and enjoy.
+        <h3 className="text-center text-dark">{ messages.signUp }</h3>
+        <p className="text-center text-dark">
+          { messages.messageSignUp }
         </p>
 
         <div className="input__item mb-3">
-          <h6>Enter your name</h6>
+          <h6>{ messages.name }</h6>
           <input 
             type="name"
             name="name"
@@ -155,11 +162,11 @@ export function AccountModal ({setShowModal}) {
         </div>
 
         <div className="input__item mb-3">
-          <h6>Enter a valid email</h6>
+          <h6>{ messages.enterEmail }</h6>
           <input 
             type="email"
             name="email"
-            placeholder="Email..."
+            placeholder={ messages.yourEmail }
             onClick={() =>{
               if(isSignUpEmpty)
                 setIsSignUpEmpty(false);
@@ -168,7 +175,7 @@ export function AccountModal ({setShowModal}) {
         </div>
 
         <div className="input__item mb-3">
-          <h6>Enter your password</h6>
+          <h6>{ messages.enterPassword }</h6>
           <input 
             type="password"
             name="password"
@@ -176,12 +183,12 @@ export function AccountModal ({setShowModal}) {
               if(isSignUpEmpty)
                 setIsSignUpEmpty(false);
             }}
-            placeholder="Password..."
+            placeholder={ messages.yourPassword }
             onChange={handleSignUpChange} />
         </div>
 
         <div className="input__item mb-3">
-          <h6>Repeat password</h6>
+          <h6>{ messages.repeatPassword }</h6>
           <input 
             type="password"
             name="repeatPassword"
@@ -189,14 +196,14 @@ export function AccountModal ({setShowModal}) {
               if(isSignUpEmpty)
                 setIsSignUpEmpty(false);
             }}
-            placeholder="Password..."
+            placeholder={ messages.yourPassword }
             onChange={handleSignUpChange} />
         </div>
           <p></p>
           <button 
             className="place__bid-btn mb-3"
             onClick={() => onSignUp()}
-          >Sign up</button>
+          >{ messages.signUp }</button>
             {isSignUpEmpty && 
               <p className='m-0 text-center' style={{color: 'red'}}>Fields cannot be blank</p>
             }
@@ -204,7 +211,7 @@ export function AccountModal ({setShowModal}) {
           className=" d-flex align-items-center justify-content-center py-3"
           onClick={()=> setShowSignUp(false)}
         >
-          <p>Have an account? Sign in </p>
+          <p>{ messages.haveAccount2 }</p>
         </div>
       </div>
     </div>
@@ -213,8 +220,8 @@ export function AccountModal ({setShowModal}) {
   return (
     <>
       { showSignUp ? 
-        <RegisterCompnent /> :
-        <LoginCompnent />
+        <RegisterComponent /> :
+        <LoginComponent />
       }
     </>
     
