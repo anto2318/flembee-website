@@ -21,10 +21,6 @@ import "./header.css";
 
 import { AccountModal } from "../UI";
 
-import {DropdownComponent} from '../Dropdown';
-
-import { SELLER__DATA } from "../../assets/data/data";
-
 export function Header () {
   const dispatch = useDispatch();
 
@@ -147,43 +143,6 @@ export function Header () {
                       </span>
                       <span style={{color:" #000", textDecoration: "none", fontSize: "0.8rem"}}>{language}</span>
                     </button>
-
-                    {isAuth || (user && user.id) ?
-                      <DropdownComponent
-                        label={
-                            <>
-                            <div style={{width: 50, height: 50}}>
-                                <img style={{verticalAlign: 0}} src={SELLER__DATA[0].sellerImg} alt="" className="w-100" />
-                              </div>
-                            </>
-                        }
-                        options={[
-                            {
-                              label: messages.schedule,
-                              icon: 'ri-calendar-line',
-                              onClick: () => navigate('/schedule')
-                            },
-                            {
-                                label: messages.projects,
-                                icon: 'ri-home-line',
-                                onClick: () => navigate('/dashboard/spaces')
-                            },
-                            {
-                                label: messages.settings,
-                                icon: 'ri-settings-3-line',
-                                onClick: () => console.log('Settings')
-                            },
-                            {
-                                label: messages.logout,
-                                icon: 'ri-logout-box-line',
-                                onClick: () => console.log('logout')
-                            }
-                        ]}
-                      /> 
-                    :
-                      <span className="loginBtn" 
-                        onClick={() => setShowModal(true)}>Login</span>
-                  }
                 </div>
               </div>
           </div>
