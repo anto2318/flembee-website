@@ -48,11 +48,11 @@ export function Header () {
     },
     {
       display: messages.aboutUs,
-      url: "/events",
+      url: "/about",
     },
     {
       display: messages.schedule,
-      url: "/spaces",
+      url: "/schedule",
     },
     {
       display: messages.contactUs,

@@ -4,47 +4,24 @@ import { Container, Row } from "reactstrap";
 
 import { Calendar, CommonSection } from "../../components";
 
-import {
-  getUserScheduleProcess,
-} from '../../redux/actions';
-
 export function Schedule () {
-  const dispatch = useDispatch();
-
   const {
-    user,
-  } = useSelector((state) => state.user);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    if (isMounted) dispatch(getUserScheduleProcess())
-
-    return () => {
-        isMounted = false;
-    };
-  }, [dispatch]);
+		messages,
+	} = useSelector((state) => state.language);
 
   return (
     <>
-      <CommonSection title={"Track your projects"} 
-                    subtitle={"Know the dates of your meetings and deliveries of your projects."}/>
+      <CommonSection title={messages.scheduleTitle} 
+                    subtitle={messages.scheduleSubtitle} />
 
       <section>
         <Container>
           <Row className="justify-content-center">
-            {user.userSchedule && user.userSchedule.length ?
-              <Calendar
-                month={new Date().getMonth()}
-                year={new Date().getFullYear()}
-                preloadedEvents={user.userSchedule}
-              />
-              : <Calendar
-                month={new Date().getMonth()}
-                year={new Date().getFullYear()}
-                preloadedEvents={[]}
-              />
-            }
+            <Calendar
+              month={new Date().getMonth()}
+              year={new Date().getFullYear()}
+              preloadedEvents={[]}
+            />
           </Row>
         </Container>
       </section>

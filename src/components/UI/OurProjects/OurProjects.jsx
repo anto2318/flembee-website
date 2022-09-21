@@ -26,7 +26,7 @@ export function OurProjects () {
             </div>
           </Col>
 
-          {PROJECTS.map((item, index) => (
+          {PROJECTS(messages).map((item, index) => (
             <Col xxl="3" xl="4" lg="4" md="6" sm="7"  xs="8"  className="mb-4" key={index}>
               <ProjectCard item={item} />
             </Col>

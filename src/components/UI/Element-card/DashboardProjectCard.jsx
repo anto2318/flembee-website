@@ -14,15 +14,6 @@ import img06 from "../../../assets/images/img-06.jpeg";
 import img07 from "../../../assets/images/img-07.jpeg";
 import img08 from "../../../assets/images/img-08.jpeg";
 import img09 from "../../../assets/images/img-09.jpeg";
-import img10 from "../../../assets/images/img-10.jpeg";
-import img11 from "../../../assets/images/img-11.jpeg";
-import img12 from "../../../assets/images/img-12.jpeg";
-import img13 from "../../../assets/images/img-13.jpeg";
-import img14 from "../../../assets/images/img-14.jpeg";
-import img15 from "../../../assets/images/img-15.jpeg";
-import img16 from "../../../assets/images/img-16.jpeg";
-import img17 from "../../../assets/images/img-17.jpeg";
-import img18 from "../../../assets/images/img-18.jpeg";
 
 import ava01 from "../../../assets/images/ava-01.png";
 import ava02 from "../../../assets/images/ava-02.png";
@@ -58,24 +49,6 @@ export function DashboardProjectCard ({item}) {
         return img08;
       case "img09":
         return img09;
-      case "img10":
-        return img10;
-      case "img11":
-        return img11;
-      case "img12":
-        return img12;
-      case "img13":
-        return img13;
-      case "img14":
-        return img14;
-      case "img15":
-        return img15;
-      case "img16":
-        return img16;
-      case "img17":
-        return img17;
-      case "img18":
-        return img18;
       case "ava01":
         return ava01;
       case "ava02":
