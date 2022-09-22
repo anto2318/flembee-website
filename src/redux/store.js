@@ -1,22 +1,29 @@
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { configureStore } from '@reduxjs/toolkit';
+
 import {
+    apiMdl,
+    eventsMdl,
     languageMdl,
-} from '@middlewares';
-import { rootReducer } from '@reducers';
+    ordersMdl,
+    spacesMdl,
+    uploadsMdl,
+    userMdl
+} from './middlewares';
+import { rootReducer } from './reducers';
 
 if (process.env.NODE_ENV !== 'production') {
     // middleware.push();
 }
-const composeEnhancers = composeWithDevTools({
-    // Specify name here, actionsBlacklist, actionsCreators and other options if needed
-});
 
-export const store = createStore(
-    rootReducer,
-    composeEnhancers(
-        applyMiddleware(
-            ...languageMdl,
-        )
-    )
-);
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: [
+        ...languageMdl,
+        ...eventsMdl,
+        ...ordersMdl,
+        ...spacesMdl,
+        ...uploadsMdl,
+        ...userMdl,
+        apiMdl
+    ]
+  })

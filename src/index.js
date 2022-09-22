@@ -1,23 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import * as Redux from 'react-redux';
 
 import { store } from './redux';
 
-import App from './App';
-import * as serviceWorker from './registerServiceWorker';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import './index.css';
-import './assets/scss/lazy.scss';
-import './assets/scss/demo.scss';
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "remixicon/fonts/remixicon.css";
 
+export default function ScrollToTop() {
+  const { pathname } = useLocation();
 
-ReactDOM.render(
+  useEffect(() => {
+    if(pathname === "/contact")
+      window.scrollTo(0, document.body.scrollHeight);
+    else
+      window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
   <Redux.Provider store={store}>
-    <App />
-  </Redux.Provider>,
-  document.getElementById('root')
+    <Router>
+      <ScrollToTop />
+      <App />
+    </Router>
+  </Redux.Provider>
 );
 
-serviceWorker.unregister();
+reportWebVitals();
