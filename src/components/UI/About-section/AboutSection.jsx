@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux';
 
 import "./styles.css";
 
-import heroImg from "../../../assets/svg/launch.svg";
+import heroImg from "../../../assets/images/aboutus.png";
 
-export function HeroSection () {
+export function AboutSection () {
 
   const {
 		messages,
@@ -21,13 +21,13 @@ export function HeroSection () {
           <Col lg="6" md="6">
             <div className="hero__content">
               <p>
-                { messages.header }
+                { messages.aboutHeader }
               </p>
               <h2>
-                { messages.title }
+                { messages.aboutTitle }
               </h2>
               <p>
-                { messages.subtitle }
+                { messages.aboutText }
               </p>
 
               <div className="hero__btns d-flex align-items-center gap-4">
@@ -36,8 +36,8 @@ export function HeroSection () {
                   <Link to="/home">{ messages.explore }</Link>
                 </button>
                 <button className=" create__btn d-flex align-items-center gap-2">
-                  <i className="ri-information-line"></i>
-                  <Link to="/about">{ messages.aboutUs }</Link>
+                  <i className="ri-send-plane-line"></i>
+                  <Link to="/contact">{ messages.contactUs }</Link>
                 </button>
               </div>
             </div>

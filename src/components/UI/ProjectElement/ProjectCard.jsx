@@ -10,7 +10,7 @@ export function ProjectCard ({item}) {
   return (
     <div>
       {showModal && <Modal setShowModal={setShowModal} />}
-        <div style={{width: "310px", padding:"20px", height: "310px", 
+        <div style={{width: "310px", padding:"20px", height: "340px", 
                       background: "white", borderRadius: "10px", 
                       boxShadow: "0 0 1rem rgba(235,98,98,0.2)", cursor: "pointer"}}>
           <div style={{width: "270px", height: "150px", textAlign: "center"}}>
@@ -21,11 +21,11 @@ export function ProjectCard ({item}) {
           </div>
       
           <div style={{marginTop: "15px"}}>
-            <h6 className="element__title" style={{color: "black", textAlign: "center"}}>
+            <h5 className="element__title" style={{color: "black", textAlign: "center"}}>
               {name}
-            </h6>
+            </h5>
             <div className="creator__info-wrapper d-flex gap-3">
-              <p style={{color: "black", textAlign: "center"}}>{description}</p>
+              <p style={{color: "black", textAlign: "center", lineHeight: "25px"}}>{description}</p>
             </div>
           </div>
       </div>

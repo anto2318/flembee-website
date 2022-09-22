@@ -11,9 +11,7 @@ import {
   changeLanguage,
 } from '../../redux/actions';
 
-import { getStorage } from '../../helpers';
-
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
 
@@ -33,13 +31,9 @@ export function Header () {
 
   const menuRef = useRef(null);
 
+  const location = useLocation();
+  
   const [showModal, setShowModal] = useState(false);
-
-  const navigate = useNavigate();
-
-  const user = getStorage.user();
-
-  const isAuth = useSelector((state) => state.user.isAuthenticated);
 
   const NAV__LINKS = [
     {
@@ -61,30 +55,19 @@ export function Header () {
   ];
 
   useEffect(() => {
-    let isMounted = true;
-
-    if (isMounted && isAuth)
-      setShowModal(false)
-
-    return () => {
-        isMounted = false;
-    };
-  }, [isAuth]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("header__shrink");
-      } else {
-        headerRef.current.classList.remove("header__shrink");
-      }
-    });
-    return () => {
-      window.removeEventListener("scroll");
-    };
+      window.addEventListener("scroll", () => {
+        if (
+          document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80
+        ) {
+          headerRef.current.classList.add("header__shrink");
+        } else {
+          headerRef.current.classList.remove("header__shrink");
+        }
+      });
+      return () => {
+        window.removeEventListener("scroll");
+      };
   }, []);
 
   useEffect(() => {
@@ -121,14 +104,14 @@ export function Header () {
               <ul className="nav__list">
                 {NAV__LINKS.map((item, index) => (
                   <li className="nav__item" key={index}>
-                    <NavLink
-                      to={item.url}
-                      className={(navClass) =>
-                        navClass.isActive ? "active" : ""
-                      }
-                    >
-                      {item.display}
-                    </NavLink>
+                      <NavLink
+                        to={item.url}
+                        className={(navClass) =>
+                          navClass.isActive ? "active" : ""
+                        }
+                      >
+                        {item.display}
+                      </NavLink>
                   </li>
                 ))}
               </ul>

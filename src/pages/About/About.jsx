@@ -1,12 +1,12 @@
 import React from "react";
 
-import { HeroSection, Banner, OurServices, Guarantee, OurProjects, StepSection, HireService, Contact } from "../../components";
+import { AboutSection, OurProjects, StepSection, HireService } from "../../components";
 
 export function About () {
   
   return (
     <>
-      <HeroSection />
+      <AboutSection />
       <HireService />
       <StepSection />
       <OurProjects />

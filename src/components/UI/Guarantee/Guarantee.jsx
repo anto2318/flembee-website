@@ -30,7 +30,7 @@ export function Guarantee () {
               <div className="guarantee__btns d-flex align-items-center gap-4">
                 <button className=" create__btn d-flex align-items-center gap-2">
                   <i className="ri-send-plane-line"></i>
-                  <Link to="/dashboard/create-event">{ messages.contactUs }</Link>
+                  <Link to="/contact">{ messages.contactUs }</Link>
                 </button>
               </div>
             </div>

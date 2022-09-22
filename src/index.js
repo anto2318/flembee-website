@@ -16,7 +16,10 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if(pathname === "/contact")
+      window.scrollTo(0, document.body.scrollHeight);
+    else
+      window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
