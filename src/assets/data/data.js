@@ -241,6 +241,11 @@ export const TECHNOLOGIES = [
 
 export const PROJECTS = (language) => [
   {  
+    image: img09,  
+    name: language.project4Title,  
+    description: language.project4Text,  
+  },
+  {  
     image: img06,  
     name: language.project1Title, 
     description: language.project1Text,  
@@ -254,11 +259,6 @@ export const PROJECTS = (language) => [
     image: img08,  
     name: language.project3Title, 
     description: language.project3Text,  
-  },
-  {  
-    image: img09,  
-    name: language.project4Title,  
-    description: language.project4Text,  
   },
 ];
 
