@@ -28,7 +28,7 @@ export function StepSection () {
             <Col lg="3" md="4" sm="6" key={index} className="mb-4">
               <div className="single__step__item">
                 <span>
-                  <i className="ri-lightbulb-line"></i>
+                  <i className={item.icon}></i>
                 </span>
                 <div className="step__item__content">
                   <h5>
