@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Col } from "reactstrap";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 import { ProjectCard } from "../ProjectElement";
 
@@ -15,23 +17,39 @@ export function OurProjects () {
 		messages,
 	} = useSelector((state) => state.language);
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+
   return (
     <section style={{backgroundColor: "#F7F7F7"}}>
       <Container>
-        <Row>
-          <Col lg="12" className="mb-5">
-            <div className="upcoming__events__top" style={{textAlign: 'center'}}>
-              <h3>{ messages.ourProjectsTitle }</h3>
-              <p>{ messages.ourProjectsText }</p>
-            </div>
-          </Col>
-
+        <Col lg="12" className="mb-5">
+          <div className="upcoming__events__top" style={{textAlign: 'center'}}>
+            <h3>{ messages.ourServicesTitle }</h3>
+            <p>{ messages.ourServicesText }</p>
+          </div>
+        </Col>
+        <Carousel responsive={responsive}>
           {PROJECTS(messages).map((item, index) => (
-            <Col xxl="3" xl="4" lg="4" md="6" sm="7"  xs="8"  className="mb-4" key={index}>
-              <ProjectCard item={item} />
-            </Col>
+            <ProjectCard item={item} messages={messages} key={index}/>
           ))}
-        </Row>
+        </Carousel>
       </Container>
     </section>
   );
