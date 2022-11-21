@@ -30,6 +30,11 @@ export function Footer () {
             <input type="text" className="newsletter" placeholder="Email" />
             <div className="social__links d-flex gap-3 align-items-center ">
               <span>
+                <a href="https://github.com/flembee" target="blank">
+                  <i className="ri-github-line"></i>
+                </a>
+              </span>
+              <span>
                 <a href="https://instagram.com/flembee.tech" target="blank">
                   <i className="ri-instagram-line"></i>
                 </a>
