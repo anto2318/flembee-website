@@ -41,8 +41,8 @@ export function OurProjects () {
       <Container>
         <Col lg="12" className="mb-5">
           <div className="upcoming__events__top" style={{textAlign: 'center'}}>
-            <h3>{ messages.ourServicesTitle }</h3>
-            <p>{ messages.ourServicesText }</p>
+            <h3>{ messages.ourProjectsTitle }</h3>
+            <p>{ messages.ourProjectsText }</p>
           </div>
         </Col>
         <Carousel responsive={responsive}>
