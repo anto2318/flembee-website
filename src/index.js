@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
-import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import * as Redux from 'react-redux';
 
 import { store } from './redux';
@@ -13,8 +13,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "remixicon/fonts/remixicon.css";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
-
   useEffect(() => {
       window.scrollTo(0, 0);
   });

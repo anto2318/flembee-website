@@ -11,7 +11,7 @@ import {
   changeLanguage,
 } from '../../redux/actions';
 
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
 
@@ -30,8 +30,6 @@ export function Header () {
   const headerRef = useRef(null);
 
   const menuRef = useRef(null);
-
-  const location = useLocation();
   
   const [showModal, setShowModal] = useState(false);
 
@@ -78,7 +76,7 @@ export function Header () {
       return () => {
           isMounted = false;
       };
-  }, []);
+  }, [dispatch]);
 
   const onChangeLanguage = async () => {
     const lng = language === "English" ? {language: "Español", messages: es} : {language: "English", messages: en}
