@@ -35,18 +35,22 @@ export function Header () {
 
   const NAV__LINKS = [
     {
+      icon: "ri-home-line",
       display: "Home",
       url: "/home",
     },
     {
+      icon: "ri-information-line",
       display: messages.aboutUs,
       url: "/about",
     },
     {
+      icon: "ri-calendar-event-line",
       display: messages.schedule,
       url: "/schedule",
     },
     {
+      icon: "ri-mail-line",
       display: messages.contactUs,
       url: "/contact",
     },
@@ -108,10 +112,38 @@ export function Header () {
                           navClass.isActive ? "active" : ""
                         }
                       >
+                        <i className={`icon__header ${item.icon}`}/>
                         {item.display}
                       </NavLink>
                   </li>
                 ))}
+                <div className="social__links social__visible d-flex gap-3 align-items-center">
+                  <span>
+                    <a href="https://wa.me/message/NF6FCVSJZIQMC1" target="blank">
+                      <i className="ri-whatsapp-line"></i>
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://github.com/flembee" target="blank">
+                      <i className="ri-github-line"></i>
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://instagram.com/flembee.tech" target="blank">
+                      <i className="ri-instagram-line"></i>
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.linkedin.com/company/flembee" target="blank">
+                      <i className="ri-linkedin-line"></i>
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://twitter.com/flembee_tech" target="blank">
+                      <i className="ri-twitter-line"></i>
+                    </a>
+                  </span>
+                </div>
               </ul>
             </div>
 

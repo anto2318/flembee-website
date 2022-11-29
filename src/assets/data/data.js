@@ -33,14 +33,15 @@ import shopify from '../svg/shopify-icon.svg';
 
 import img01 from "../svg/web-development.svg";
 import img02 from "../svg/mobile-development.svg";
-import img03 from "../svg/ui-uix.svg";
-import img04 from "../svg/devops.svg";
-import img05 from "../svg/qa.svg";
+import img03 from "../images/consult.png";
+import img04 from "../svg/ui-uix.svg";
+import img05 from "../svg/devops.svg";
+import img06 from "../svg/qa.svg";
 
-import img06 from "../images/bm.png";
-import img07 from "../images/arambee.png";
-import img08 from "../images/krypto.png";
-import img09 from "../images/kboom.png";
+import img07 from "../images/bm.png";
+import img08 from "../images/arambee.png";
+import img09 from "../images/krypto.png";
+import img10 from "../images/kboom.png";
 
 import ava01 from "../images/ava-01.png";
 import ava02 from "../images/ava-02.png";
@@ -53,32 +54,38 @@ export const SERVICES = (language) => [
   {  
     image: img01,  
     name: language.service1Title, 
-    background: "linear-gradient(rgb(209, 211, 246) 0%, rgb(209, 211, 246) 100%)", 
+    background: "rgb(247 137 211 / 50%)", 
     description: language.service1Text,  
   },
   {  
     image: img02,  
     name: language.service2Title,
-    background: "linear-gradient(rgb(230, 221, 244) 0%, rgb(230, 221, 244) 100%)",  
+    background: "rgb(132 132 219 / 50%)",  
     description: language.service2Text,  
   },
   {  
     image: img03,  
     name: language.service3Title,
-    background: "linear-gradient(rgb(246, 214, 214) 0%, rgb(246, 214, 214) 100%)",  
+    background: "rgb(180 246 242 / 50%)",  
     description: language.service3Text,  
   },
   {  
     image: img04,  
-    name: language.service4Title,  
-    background: "linear-gradient(rgb(186, 228, 244) 0%, rgb(186, 228, 244) 100%)",
+    name: language.service4Title,
+    background: "rgb(242 161 161 / 50%)",  
     description: language.service4Text,  
   },
   {  
     image: img05,  
-    name: language.service5Title, 
-    background: "linear-gradient(rgb(244, 220, 204) 0%, rgb(244, 220, 204) 100%)", 
+    name: language.service5Title,  
+    background: "rgb(186, 228, 244) 100%",
     description: language.service5Text,  
+  },
+  {  
+    image: img06,  
+    name: language.service6Title, 
+    background: "rgb(255 211 138 / 50%)", 
+    description: language.service6Text,  
   },
 ];
 
@@ -241,22 +248,22 @@ export const TECHNOLOGIES = [
 
 export const PROJECTS = (language) => [
   {  
-    image: img09,  
+    image: img10,  
     name: language.project4Title,  
     description: language.project4Text,  
   },
   {  
-    image: img06,  
+    image: img07,  
     name: language.project1Title, 
     description: language.project1Text,  
   },
   {  
-    image: img07,  
+    image: img08,  
     name: language.project2Title,
     description: language.project2Text,  
   },
   {  
-    image: img08,  
+    image: img09,  
     name: language.project3Title, 
     description: language.project3Text,  
   },
