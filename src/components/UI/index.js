@@ -5,6 +5,7 @@ export * from './ServiceElement';
 export * from './Guarantee';
 export * from './Hero-section';
 export * from './About-section';
+export * from './Contact-section';
 export * from './Banner';
 export * from './Modal';
 export * from './Seller-section';
