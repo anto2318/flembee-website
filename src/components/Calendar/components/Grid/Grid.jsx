@@ -5,7 +5,7 @@ import moment from "moment";
 export function Grid ({
   date,
   events,
-  setViewingEvent,
+  setModalHandler,
   actualDate,
 }) {
 
@@ -32,7 +32,7 @@ export function Grid ({
         return (
           <div
             key={index}
-           className={`cell ${
+            className={`cell ${
             moment(nowDate).isSame(currentDate, "day")
                 ? "current"
                 : ""
@@ -41,17 +41,19 @@ export function Grid ({
                 ? "otherMonth"
                 : ""
             }`}
+            onClick={() => setModalHandler(true)}
           >
             <div className="date">
               {moment(date.date).format("DD")}
             </div>
-            {date.events.map((event, index) => (
+            
+            {/* {date.events.map((event, index) => (
               <MiniEvent
                 key={index}
                 event={event}
                 setViewingEvent={setViewingEvent}
               />
-            ))}
+            ))} */}
           </div>
         );
       })}

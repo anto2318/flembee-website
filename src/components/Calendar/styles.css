@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     width: 100%;
     position: relative;
+    cursor: pointer;
   }
   
   .calendar a {
@@ -59,7 +60,6 @@
   .calendarNav {
     width: 100%;
     padding: 10px 8px 14px 8px;
-    border-bottom: 3px solid #eb6262;
     color: #000;
   }
   
@@ -106,6 +106,5 @@
     height: auto;
     padding: 10px 0;
     background: transparent;
-    border-bottom: 2px solid #eb6262;
   }
 

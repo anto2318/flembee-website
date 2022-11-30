@@ -8,43 +8,31 @@ export function Calendar ({ month, year, preloadedEvents }) {
   const selectedDate = new Date(year, month);
 
   const [date, setDate] = useState(selectedDate);
-  const [viewingEvent, setViewingEvent] = useState(false);
-
-  const event = {  
-      image: "img06",
-      _id: "62ace8d7f207a84452fd2a15",
-      name: "Sir Lion Swag",
-      description: "Sir Lion Swag es un evento muy cool",
-      price: 12,
-      host: {
-          userImage: "ava01",
-          name: "Antonio Nardi",
-      },
-      space: {
-          name: "El Garage Birra",
-      }
-  }
+  const [modalHandler, setModalHandler] = useState(false);
   
   useEffect(() => {
   }, [date]);
 
   return (
-    <div className="calendar">
-      {viewingEvent && <Modal event={event} setViewingEvent={setViewingEvent} />}
+    <>
+      {modalHandler && <Modal setModalHandler={setModalHandler} daySelected={date} />}
+      <div className="calendar">
 
-      <Navigation
-        date={date}
-        setDate={setDate}
-      />
+        <Navigation
+          date={date}
+          setDate={setDate}
+        />
 
-      <DayLabels />
+        <DayLabels />
 
-      <Grid
-        date={date}
-        events={preloadedEvents}
-        setViewingEvent={setViewingEvent}
-        actualDate={date}
-      />
-    </div>
+        <Grid
+          date={date}
+          events={preloadedEvents}
+          setModalHandler={setModalHandler}
+          actualDate={date}
+        />
+      </div>
+    </>
+    
   );
 };
