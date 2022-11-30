@@ -9,6 +9,7 @@
     "messageSignUp": "Create a new account and enjoy.",
     "enterEmail": "Enter a valid email",
     "yourEmail": "Email...",
+    "fieldsBlank": "Fields cannot be blank",
     "yourPassword": "Password...",
     "haveAccount": "Don't have an account? Get started",
     "haveAccount2": "Have an account? Sign in",
