@@ -9,13 +9,14 @@ export function Calendar ({ month, year, preloadedEvents }) {
 
   const [date, setDate] = useState(selectedDate);
   const [modalHandler, setModalHandler] = useState(false);
+  const [dateSelected, setDateSelected] = useState(date);
   
   useEffect(() => {
   }, [date]);
 
   return (
     <>
-      {modalHandler && <Modal setModalHandler={setModalHandler} daySelected={date} />}
+      {modalHandler && <Modal setModalHandler={setModalHandler} dateSelected={dateSelected} />}
       <div className="calendar">
 
         <Navigation
@@ -29,6 +30,7 @@ export function Calendar ({ month, year, preloadedEvents }) {
           date={date}
           events={preloadedEvents}
           setModalHandler={setModalHandler}
+          setDateSelected={setDateSelected}
           actualDate={date}
         />
       </div>

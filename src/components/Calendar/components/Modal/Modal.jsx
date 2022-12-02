@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { Input } from "reactstrap";
+import emailjs from '@emailjs/browser';
 
-// import {
-//   sendEmail
-// } from '../../redux/actions';
+import moment from "moment";
 
-export function Modal ({setModalHandler}) {
+export function Modal ({dateSelected, setModalHandler}) {
 
-  const dispatch = useDispatch();
+  const form = useRef();
+
+  const { REACT_APP_EMAIL_SERVICE_ID, REACT_APP_EMAIL_SCHEDULE_TEMPLATE_ID, REACT_APP_EMAIL_PUBLIC_KEY } = process.env;
+
+  const [isEmptyForm, setIsEmptyForm] = useState(false);
+  const [submitButton, showSubmitButton] = useState(false);
 
   const {
     messages
   } = useSelector((state) => state.language);
 
-  const [isEmptyForm, setIsEmptyForm] = useState(false);
-
   const [scheduleForm, setScheduleForm] = useState({
-    subject: "",
+    name: "",
     email: "",
-    schedule: "",
-    observations: ""
+    schedule_time: "",
+    message: ""
   });
   
   const handleScheduleFormChange = (e) => {    
@@ -35,19 +36,18 @@ export function Modal ({setModalHandler}) {
     });
   };
 
-  const onSendEmail = async () => {
-
-    const { subject, email, schedule, observations}  = scheduleForm;
-
-    const scheduleFormCopy = {subject, email, schedule};
-
-    const checkProperties = Object.values(scheduleFormCopy).every(el => el !== '');
+  const onSendEmail = async (e) => {
+    e.preventDefault();
+    const checkProperties = Object.values(scheduleForm).every(el => el !== '');
 
     if(checkProperties){
-      console.log(scheduleForm);
-      // dispatch(sendEmail(scheduleForm));
-
-        setModalHandler(false)
+      emailjs.sendForm(REACT_APP_EMAIL_SERVICE_ID, REACT_APP_EMAIL_SCHEDULE_TEMPLATE_ID, form.current, REACT_APP_EMAIL_PUBLIC_KEY)
+        .then((result) => {
+            console.log(result.text);
+            showSubmitButton(true)
+        }, (error) => {
+            console.log(error.text);
+        });
 
     }else{
       setIsEmptyForm(true);
@@ -67,98 +67,101 @@ export function Modal ({setModalHandler}) {
         <p className="text-center text-dark">
           {messages.scheduleFormSubtitle}
         </p>
+        <form className="mt-2" ref={form} onSubmit={onSendEmail}>
+          <div className="form__input">
+            <input
+              type="text"
+              placeholder={ messages.name }
+              name="name"
+              style={{color: "black", border: "1px solid #eb6262"}}
+              onClick={() =>{
+                if(isEmptyForm)
+                  setIsEmptyForm(false);
+                }}
+                onChange={(e) => handleScheduleFormChange(e)} />
+          </div>
+          <div className="form__input">
+            <input
+              type="email"
+              placeholder={ messages.email }
+              name="email"
+              style={{color: "black", border: "1px solid #eb6262"}}
+              onClick={() =>{
+                if(isEmptyForm)
+                  setIsEmptyForm(false);
+                }}
+              onChange={(e) => handleScheduleFormChange(e)}
+            />
+          </div>
+          <div className=" d-flex align-items-center gap-4">
+            <div className="form__input w-50">
+              <p className="text-dark" style={{fontSize: 15, marginBottom: 2}}>
+                {messages.scheduleFormSelectDate}
+              </p>
+              <input
+                id="exampleDate"
+                name="schedule_date"
+                readOnly
+                placeholder="date placeholder"
+                defaultValue={moment(dateSelected).format("DD-MM-YYYY")}
+                style={{backgroundColor: "#dfdfdf", color: "black", border: "1px solid #eb6262", colorScheme: "dark"}}
+              />
+            </div>
 
-        <div className="input__item mb-4">
-          <h6>{messages.scheduleFormSubject} *</h6>
-          <input type="text"
-                 name="subject" 
-                 placeholder={messages.scheduleFormSubjectPlaceholder}
-                 onClick={() =>{
+            <div className="form__input w-50">
+              <p className="text-dark" style={{fontSize: 15, marginBottom: 2}}>
+                {messages.scheduleFormSelectTime}
+              </p>
+              <input
+                id="exampleTime"
+                name="schedule_time"
+                placeholder="time placeholder"
+                type="time"
+                style={{color: "black", border: "1px solid #eb6262", colorScheme: "dark"}}
+                onClick={() =>{
                   if(isEmptyForm)
                     setIsEmptyForm(false);
                 }}
-                onChange={(e) => handleScheduleFormChange(e)}  />
-        </div>
-
-        <div className="input__item mb-4">
-          <h6>Email *</h6>
-          <input type="text"
-                 name="email" 
-                 placeholder={messages.scheduleFormEmailPlaceholder}
-                 onClick={() =>{
-                  if(isEmptyForm)
-                    setIsEmptyForm(false);
-                 }}
-                 onChange={(e) => handleScheduleFormChange(e)}  />
-        </div>
-
-        <div className="input__item mb-3">
-          <h6>{messages.scheduleFormSelectTime} *</h6>
-          <Input
-            id="exampleTime"
-            name="schedule"
-            placeholder="time placeholder"
-            type="time"
-            style={{border: "1px solid #eb6262", colorScheme: "dark"}}
-            onClick={() =>{
-              if(isEmptyForm)
-                setIsEmptyForm(false);
-             }}
-             onChange={(e) => handleScheduleFormChange(e)}
-          />
-        </div>
-
-        <div className="input__item mb-3">
-          <h6>{messages.scheduleFormObservations}</h6>
-          <textarea
-            name="observations" 
-            style={{ width: "100%", 
-                     height: "80px", 
-                     border: "1px solid #eb6262", 
-                     fontSize: "0.8rem",
-                     padding: "10px 0px 0px 20px",
-                     outline: "none"
-                  }} 
-            placeholder={messages.scheduleFormObservationsPlaceholder}
-            onClick={() =>{
-              if(isEmptyForm)
-                setIsEmptyForm(false);
-             }}
-             onChange={(e) => handleScheduleFormChange(e)} />
-        </div>
-
-        {isEmptyForm && 
-          <p className='text-end' style={{color: '#eb6262', fontSize: '0.9rem'}}>{messages.fieldsBlank}</p>
-        }
-        <button className="place__bid-btn"
-                 onClick={()=> onSendEmail()}>
-          <i className="me-2 ri-calendar-event-line"/>
-          {messages.scheduleFormButton}
-        </button>
+                onChange={(e) => {
+                  handleScheduleFormChange(e)
+                }}
+              />
+            </div>
+          </div>
+          <div className="form__input">
+            <textarea
+              rows="7"
+              placeholder={ messages.typeMessage }
+              name="message"
+              style={{color: "black", border: "1px solid #eb6262"}}
+              onClick={() =>{
+                if(isEmptyForm)
+                  setIsEmptyForm(false);
+                }}
+              onChange={(e) => handleScheduleFormChange(e)}
+            ></textarea>
+          </div>
+          {isEmptyForm && 
+              <p className='text-end' style={{color: '#eb6262', fontSize: '0.9rem'}}>{messages.fieldsBlank}</p>
+          }                  
+          {submitButton ?  
+            (
+              <span style={{alignItems: "center", 
+                    justifyContent: "center", 
+                    display: 'flex', 
+                    margin: "0 auto", 
+                    color: '#000', 
+                    fontSize: '0.9rem'}}>{messages.messageSent}
+                <i className="ms-2 ri-checkbox-circle-line" style={{color: 'green', fontSize: '25px'}}/>
+              </span>
+            )
+            : (<button type="submit" className="place__bid-btn" disabled={submitButton}>
+                <i className="me-2 ri-send-plane-line" />
+                  { messages.scheduleFormButton }
+              </button>)
+          }
+        </form>
       </div>
     </div>
-    // <div className="modal__wrapper">
-    //   <div className="single__modal" style={{width: 310, height: "auto", padding: 0}}>
-    //     <span className="close__modal"
-    //           onClick={() => setModalHandler(false)}>
-    //       <i className="ri-close-line" />
-    //     </span>
-    //     <Form>
-    //       <FormGroup className="w-50">
-    //         <Label for="exampleTime">
-    //           Seleccione una hora
-    //         </Label>
-    //         <Input
-    //           id="exampleTime"
-    //           name="time"
-    //           placeholder="time placeholder"
-    //           type="time"
-    //           style={{colorScheme: "dark"}}
-    //           onChange={(e) => console.log(e, {startH: e.target.value})} 
-    //         />
-    //       </FormGroup>
-    //     </Form>
-    //   </div>
-    // </div>
   );
 };

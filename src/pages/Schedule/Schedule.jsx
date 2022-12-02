@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
+import { useSelector } from 'react-redux';
 import { Container, Row } from "reactstrap";
 
 import { Calendar, CommonSection } from "../../components";

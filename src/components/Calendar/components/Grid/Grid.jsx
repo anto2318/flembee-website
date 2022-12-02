@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { findEventsForDate, toStartOfDay } from "../../../../helpers";
 import { MiniEvent } from "../";
 import moment from "moment";
@@ -7,6 +8,7 @@ export function Grid ({
   events,
   setModalHandler,
   actualDate,
+  setDateSelected
 }) {
 
   const ROWS_COUNT = 6;
@@ -41,7 +43,10 @@ export function Grid ({
                 ? "otherMonth"
                 : ""
             }`}
-            onClick={() => setModalHandler(true)}
+            onClick={() => {
+              setDateSelected(date.date)
+              setModalHandler(true)
+            }}
           >
             <div className="date">
               {moment(date.date).format("DD")}
