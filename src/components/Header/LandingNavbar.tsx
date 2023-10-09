@@ -1,0 +1,164 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+
+import logo from "../../assets/images/logo.png";
+
+import { SelectedPage } from "../../shared";
+
+import useMediaQuery from "../../hooks/useMediaQuery";
+
+import { CustomLink } from ".";
+
+type Props = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+  isTopOfPage: boolean;
+};
+
+const handleScrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+export function LandingNavbar({
+    selectedPage,
+    setSelectedPage,
+    isTopOfPage,
+}: Props) {
+
+  const flexBetween = "flex items-center justify-between";
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+  const navbarBg = isTopOfPage ? "" : "shadow-sm bg-white drop-shadow";
+  const navigate = useNavigate();
+  return (
+    <nav>
+      <div
+        className={` ${navbarBg} ${flexBetween} fixed top-0 z-30 w-full py-6 font-medium`}
+      >
+        <div className={`${flexBetween} mx-auto w-5/6`}>
+          <div className={`${flexBetween} w-full gap-16`}>
+            {/* Left side */}
+
+            <img
+              src={logo}
+              alt="logo"
+              className="w-32 cursor-pointer"
+              onClick={handleScrollToTop}
+            />
+
+            {/* Right side */}
+            {isAboveMediumScreens ? (
+              <div className={`${flexBetween} w-full`}>
+                {/* Links */}
+                <div className={`${flexBetween} text-md gap-8`}>
+                  <CustomLink
+                    page="Home"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <CustomLink
+                    page="Features"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <CustomLink
+                    page="About"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <CustomLink
+                    page="Services"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <CustomLink
+                    page="FAQ"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+
+                  <CustomLink
+                    page="Contacts"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                </div>
+                {/* Button */}
+                <div className={`${flexBetween} gap-4`}>
+                  <button
+                    onClick={() => navigate("/login")}
+                    className="border:primary-two/50 shadow-xs w-full min-w-fit rounded-md border border-primary-two/20 px-4 py-2.5 text-center font-semibold bg-primary-two text-white shadow-primary-two/50 duration-200 hover:border-primary-two md:w-max"
+                  >
+                    Iniciar Sesión
+                  </button>
+                  <button
+                    onClick={() => navigate("/login")}
+                    className="border:primary-two/50 shadow-xs w-full min-w-fit rounded-md border border-primary-two/20 px-4 py-2.5 text-center font-semibold text-primary-two shadow-primary-two/50 duration-200 hover:border-primary-two md:w-max"
+                  >
+                    Regístrate
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                className="rounded-full p-2 text-primary-two"
+                onClick={() => setIsMenuToggled(!isMenuToggled)}
+              >
+                {!isMenuToggled ? (
+                  <HiMenuAlt3 className="h-6 w-6" />
+                ) : (
+                  <HiX className="h-6 w-6" />
+                )}
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+      {/* Mob menu */}
+      {!isAboveMediumScreens && isMenuToggled && (
+        <div className="fixed right-0 top-[82px] z-30 w-full max-w-full rounded-lg border border-primary-two/20 bg-white p-6 transition-all duration-200 sm:right-1 sm:max-w-[300px]">
+          <div
+            className={`${flexBetween} text-md flex flex-col justify-center gap-6 font-semibold`}
+          >
+            <CustomLink
+              page="Home"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <CustomLink
+              page="Features"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <CustomLink
+              page="About"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <CustomLink
+              page="Services"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <CustomLink
+              page="FAQ"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+
+            <CustomLink
+              page="Contacts"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
