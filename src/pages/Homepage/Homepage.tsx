@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { InlineWidget } from "react-calendly";
 
 import { SelectedPage } from "../../shared/types";
 
@@ -51,6 +52,7 @@ export function Homepage() {
         isTopOfPage={isTopOfPage}
       />
       <Brand setSelectedPage={setSelectedPage} />
+      <InlineWidget url="https://calendly.com/flembee-technologies" />
       <Features setSelectedPage={setSelectedPage} />
       <About setSelectedPage={setSelectedPage} />
       <Portfolio setSelectedPage={setSelectedPage} />

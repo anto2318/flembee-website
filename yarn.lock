@@ -2382,6 +2382,11 @@ react-anchor-link-smooth-scroll@^1.0.12:
   resolved "https://registry.yarnpkg.com/react-anchor-link-smooth-scroll/-/react-anchor-link-smooth-scroll-1.0.12.tgz#5cd49c73e74be6d20b4c05a5e5c72d07ebbedac7"
   integrity sha512-aaY+9X0yh8YnC0jBfoTKpsiCLdO/Y6pCltww+VB+NnTBPDOvnIdnp1AlazajsDitc1j+cVSQ+yNtaVeTIMQbxw==
 
+react-calendly@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-calendly/-/react-calendly-4.2.0.tgz#f5056b58d933e521e82e62af0dbdf9e5c45ecf80"
+  integrity sha512-MCewRpk9phveX+1qxXDZ7dAcMmAdWkspU7C9XqChIItQeQ+pTWguM/eAC7yVaAA988mpwXx61wS63TKZq3Znpw==
+
 react-chartjs-2@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-5.2.0.tgz#43c1e3549071c00a1a083ecbd26c1ad34d385f5d"
