@@ -52,11 +52,11 @@ export function Homepage() {
         isTopOfPage={isTopOfPage}
       />
       <Brand setSelectedPage={setSelectedPage} />
-      <InlineWidget url="https://calendly.com/flembee-technologies" />
       <Features setSelectedPage={setSelectedPage} />
       <About setSelectedPage={setSelectedPage} />
       <Portfolio setSelectedPage={setSelectedPage} />
       <Faq setSelectedPage={setSelectedPage} />
+      <InlineWidget url="https://calendly.com/flembee-technologies"/>
       <Contacts setSelectedPage={setSelectedPage} />
       <Footer {...FooterData} />
     </div>
